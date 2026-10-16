@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html lang="zh-Hant" class="scroll-smooth">
+<html lang="zh-Hant-TW" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JR 旅程儀式 Journey Ritual｜東方命理智慧 × 現代芳香療法 × 個人專屬儀式</title>
-  <meta name="description" content="在喧囂中，為靈魂預留一處安棲之所。JR 旅程儀式由江汶叡創立，結合八字命理諮詢、中式芳療精油淋巴按摩與個人專屬香膏調製，為每一段人生旅程留下一場專屬於自己的儀式。" />
+  <title>JR 旅程儀式｜八字命理、芳療按摩與個人香膏</title>
+  <meta name="description" content="JR 旅程儀式由江汶叡創立，結合八字命理諮詢、芳療精油淋巴按摩與個人專屬香膏調製，陪伴你在日常中找回覺察、平衡與專屬的身心儀式。" />
+  <meta name="keywords" content="八字命理,芳療按摩,淋巴按摩,香膏調製,中式芳療,個人化芳療,JR旅程儀式" />
+  <meta name="author" content="江汶叡｜JR 旅程儀式" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#18362F" />
+  <link rel="canonical" href="./" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:site_name" content="JR 旅程儀式 Journey Ritual" />
+  <meta property="og:url" content="./" />
+  <meta property="og:title" content="JR 旅程儀式｜八字命理、芳療按摩與個人香膏" />
+  <meta property="og:description" content="結合東方命理智慧與現代芳香療法，為每一段人生旅程留下一場專屬儀式。" />
+  <meta property="og:image" content="作品集/ray.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="JR 旅程儀式｜八字命理、芳療按摩與個人香膏" />
+  <meta name="twitter:description" content="結合東方命理智慧與現代芳香療法的個人化旅程。" />
+  <meta name="twitter:image" content="作品集/ray.jpg" />
 
   <!-- Google Fonts: 襯線體 (Noto Serif TC & Cormorant Garamond) 與 無襯線體 (Noto Sans TC & Inter) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -41,15 +57,15 @@
             }
           },
           fontFamily: {
-            serifTC: ['"Noto Serif TC"', '"Songti TC"', 'serif'],
+            serifTC: ['"Noto Sans TC"', '"Inter"', 'sans-serif'],
             sansTC: ['"Noto Sans TC"', '"Inter"', 'sans-serif'],
-            displayEn: ['"Cormorant Garamond"', ' Georgia', 'serif'],
+            displayEn: ['"Inter"', 'sans-serif'],
             monoEn: ['"Inter"', 'monospace']
           },
           boxShadow: {
-            'editorial': '0 20px 50px -15px rgba(48, 54, 49, 0.06)',
-            'card-hover': '0 28px 60px -15px rgba(155, 174, 155, 0.22)',
-            'cta-glow': '0 0 28px rgba(155, 174, 155, 0.45), 0 0 12px rgba(16, 185, 129, 0.18)'
+            'editorial': '0 20px 50px -15px rgba(24, 54, 47, 0.06)',
+            'card-hover': '0 28px 60px -15px rgba(168, 184, 160, 0.22)',
+            'cta-glow': '0 0 28px rgba(168, 184, 160, 0.45), 0 0 12px rgba(36, 72, 62, 0.18)'
           }
         }
       }
@@ -72,8 +88,52 @@
       background-color: var(--bg-warm);
       color: var(--text-ink);
       font-family: 'Noto Sans TC', 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    p, a, button, li, label, input, textarea, select {
+      font-family: 'Noto Sans TC', 'Inter', sans-serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      line-height: 1.35;
+      text-wrap: balance;
+    }
+
+    p {
+      text-wrap: pretty;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--accent-gold);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 100;
+      transform: translateY(-200%);
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      background: var(--text-ink);
+      color: var(--bg-warm);
+      transition: transform 0.2s ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
     }
 
     /* Keep the solutions block immediately before the booking block. */
@@ -106,10 +166,10 @@
     /* 細緻植物與東方宣紙微紋理背景 */
     .subtle-grid-bg {
       background-image:
-        radial-gradient(circle at 18% 22%, rgba(155, 174, 155, 0.14) 0%, transparent 45%),
-        radial-gradient(circle at 82% 75%, rgba(197, 172, 131, 0.12) 0%, transparent 50%),
-        linear-gradient(to right, rgba(48, 54, 49, 0.025) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(48, 54, 49, 0.025) 1px, transparent 1px);
+        radial-gradient(circle at 18% 22%, rgba(168, 184, 160, 0.14) 0%, transparent 45%),
+        radial-gradient(circle at 82% 75%, rgba(200, 164, 93, 0.12) 0%, transparent 50%),
+        linear-gradient(to right, rgba(24, 54, 47, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(24, 54, 47, 0.025) 1px, transparent 1px);
       background-size: 100% 100%, 100% 100%, 64px 64px, 64px 64px;
     }
 
@@ -160,10 +220,10 @@
     /* 預約按鈕與 Status: Ready to Connect 裝飾性微互動 */
     .ritual-cta-btn {
       position: relative;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(247, 244, 236, 0.92);
       color: #18362F;
-      border: 1px solid rgba(197, 172, 131, 0.55);
-      box-shadow: 0 8px 24px -6px rgba(48, 54, 49, 0.08);
+      border: 1px solid rgba(200, 164, 93, 0.55);
+      box-shadow: 0 8px 24px -6px rgba(24, 54, 47, 0.08);
       transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
@@ -172,7 +232,7 @@
       transform: translateY(-2px);
       background: #F7F4EC;
       border-color: #A8B8A0;
-      box-shadow: 0 14px 32px -6px rgba(155, 174, 155, 0.42), 0 0 16px rgba(16, 185, 129, 0.16);
+      box-shadow: 0 14px 32px -6px rgba(168, 184, 160, 0.42), 0 0 16px rgba(36, 72, 62, 0.16);
     }
 
     .ritual-cta-btn:active {
@@ -189,8 +249,8 @@
     .ritual-cta-wrapper:focus-within .status-badge-micro {
       opacity: 1;
       transform: translateX(3px);
-      border-color: rgba(16, 185, 129, 0.4);
-      background-color: rgba(255, 255, 255, 0.95);
+      border-color: rgba(36, 72, 62, 0.4);
+      background-color: rgba(247, 244, 236, 0.95);
     }
 
     /* 服務卡片與圖片優雅縮放 */
@@ -200,8 +260,8 @@
 
     .service-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 28px 60px -15px rgba(155, 174, 155, 0.25);
-      border-color: rgba(197, 172, 131, 0.65);
+      box-shadow: 0 28px 60px -15px rgba(168, 184, 160, 0.25);
+      border-color: rgba(200, 164, 93, 0.65);
     }
 
     .service-card .card-img-zoom {
@@ -228,9 +288,27 @@
       }
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "JR 旅程儀式 Journey Ritual",
+    "description": "結合八字命理諮詢、芳療精油淋巴按摩與個人專屬香膏調製的個人化身心照護服務。",
+    "url": "./",
+    "image": "作品集/ray.jpg",
+    "founder": {
+      "@type": "Person",
+      "name": "江汶叡"
+    },
+    "areaServed": "TW",
+    "serviceType": ["八字命理諮詢", "芳療精油淋巴按摩", "個人專屬香膏調製"]
+  }
+  </script>
 </head>
 
 <body class="selection:bg-brand-sage/30 selection:text-brand-ink">
+
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
 
   <!-- 頂部導覽列 Sticky Navigation -->
   <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-brand-warmWhite/85 backdrop-blur-md border-b border-brand-champagne/20">
@@ -254,6 +332,8 @@
         <a href="#services" data-nav-link="services" class="nav-item text-sm tracking-widest text-brand-inkLight hover:text-brand-ink transition-colors py-1 border-b-2 border-transparent">專屬服務</a>
         <a href="#approach" data-nav-link="approach" class="nav-item text-sm tracking-widest text-brand-inkLight hover:text-brand-ink transition-colors py-1 border-b-2 border-transparent">中式芳療</a>
         <a href="#ritual-objects" data-nav-link="ritual-objects" class="nav-item text-sm tracking-widest text-brand-inkLight hover:text-brand-ink transition-colors py-1 border-b-2 border-transparent">體驗與器物</a>
+        <a href="#visit-highlights" data-nav-link="visit-highlights" class="nav-item text-sm tracking-widest text-brand-inkLight hover:text-brand-ink transition-colors py-1 border-b-2 border-transparent">參訪足跡</a>
+        <a href="#contact" data-nav-link="contact" class="nav-item text-sm tracking-widest text-brand-inkLight hover:text-brand-ink transition-colors py-1 border-b-2 border-transparent">聯絡我</a>
         <a href="#faq" data-nav-link="faq" class="nav-item text-sm tracking-widest text-brand-inkLight hover:text-brand-ink transition-colors py-1 border-b-2 border-transparent">常見問題</a>
       </nav>
 
@@ -297,6 +377,8 @@
         <a href="#ritual-objects" class="mobile-nav-link py-2.5 text-base tracking-widest text-brand-ink border-b border-brand-mistGray">05. 體驗流程與專屬香膏 Your Ritual</a>
         <a href="#testimonials" class="mobile-nav-link py-2.5 text-base tracking-widest text-brand-ink border-b border-brand-mistGray">06. 顧客回饋 Testimonials</a>
         <a href="#faq" class="mobile-nav-link py-2.5 text-base tracking-widest text-brand-ink border-b border-brand-mistGray">07. 常見問題 FAQ</a>
+        <a href="#visit-highlights" class="mobile-nav-link py-2.5 text-base tracking-widest text-brand-ink border-b border-brand-mistGray">08. 參訪足跡 Visit Highlights</a>
+        <a href="#contact" class="mobile-nav-link py-2.5 text-base tracking-widest text-brand-ink border-b border-brand-mistGray">09. 聯絡我 Contact Me</a>
       </nav>
       <div class="mt-6 pt-2 flex flex-col gap-2">
         <a href="https://calendar.app.google/j2qQkH8wEM1AddJX7"
@@ -313,7 +395,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <!-- 01. 首頁 Hero Section -->
     <section id="hero" class="relative min-h-screen pt-28 pb-16 lg:pt-32 lg:pb-24 flex items-center subtle-grid-bg overflow-hidden">
       <!-- 背景香氣微粒與柔和呼吸光暈 Canvas -->
@@ -571,10 +653,10 @@
                 此處採用東方靜謐工作室植物與光影意象作為背景，並清楚標示為「創辦人真實形象照預留版位」，方便直接替換 src。
               -->
               <div class="aspect-[4/5] relative flex flex-col justify-between p-7 sm:p-9 bg-gradient-to-br from-[#EAECE7] via-[#F7F4EC] to-[#D8D8C8]">
-                <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=80"
-                     onerror="this.onerror=null;this.src='https://placehold.co/800x1000/EAECE7/303631?text=Founder+Portrait+Placeholder';"
+                <img src="作品集/ray.jpg"
+                     onerror="this.onerror=null;this.src='https://placehold.co/800x1000/EAECE7/18362F?text=Founder+Portrait+Placeholder';"
                      alt="JR 旅程儀式芳療與命理諮詢空間意象（待替換創辦人江汶叡真實形象照）"
-                     class="absolute inset-0 w-full h-full object-cover opacity-35 mix-blend-multiply" />
+                     class="absolute inset-0 w-full h-full object-cover object-center opacity-80 mix-blend-multiply" />
                 
                 <div class="relative z-10 flex items-center justify-between">
                   <span class="px-3.5 py-1.5 rounded-full bg-brand-white/90 border border-brand-champagne/50 text-[11px] tracking-widest text-brand-ink">
@@ -695,6 +777,29 @@
     </section>
 
     <!-- 04. 專屬服務 Signature Experiences -->
+    <!-- 04. Visit Highlights -->
+    <section id="visit-highlights" class="py-24 lg:py-32 bg-brand-mistGray border-t border-brand-champagne/20 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12 reveal-item">
+          <div>
+            <p class="font-displayEn text-xs sm:text-sm uppercase tracking-[0.28em] text-brand-champagne">Visit Highlights</p>
+            <h2 class="font-serifTC text-2xl sm:text-3xl lg:text-4xl font-medium text-brand-ink tracking-wider mt-3">參訪足跡</h2>
+          </div>
+          <p class="max-w-xl text-sm sm:text-base text-brand-inkLight leading-relaxed font-light">把走過的場域、遇見的人與當下的感受收進影像，成為持續探索生活與美感的紀錄。</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-7">
+          <figure class="group lg:col-span-7 relative overflow-hidden rounded-3xl bg-brand-white border border-brand-champagne/30 shadow-editorial reveal-item">
+            <div class="aspect-[16/10] overflow-hidden"><img src="作品集/635956_0.jpg" alt="參訪戶外建築與團體合影" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div>
+            <figcaption class="p-5 sm:p-6 flex items-center justify-between gap-4"><div><p class="font-displayEn text-xs uppercase tracking-[0.2em] text-brand-champagne">01 / Open Air</p><p class="font-serifTC text-lg text-brand-ink mt-1">戶外參訪紀錄</p></div><i class="fa-solid fa-arrow-up-right-from-square text-brand-champagne" aria-hidden="true"></i></figcaption>
+          </figure>
+          <div class="lg:col-span-5 grid grid-cols-2 lg:grid-cols-1 gap-5 lg:gap-7">
+            <figure class="group relative overflow-hidden rounded-3xl bg-brand-white border border-brand-champagne/30 shadow-editorial reveal-item"><div class="aspect-[4/3] lg:aspect-[16/8] overflow-hidden"><img src="作品集/635955_0.jpg" alt="參訪室內場域與導覽紀錄" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div><figcaption class="p-4 sm:p-5"><p class="font-displayEn text-xs uppercase tracking-[0.18em] text-brand-sageDark">02 / Inside</p><p class="font-serifTC text-base text-brand-ink mt-1">室內參訪</p></figcaption></figure>
+            <figure class="group relative overflow-hidden rounded-3xl bg-brand-white border border-brand-champagne/30 shadow-editorial reveal-item"><div class="aspect-[4/3] lg:aspect-[16/8] overflow-hidden"><img src="作品集/635954_0.jpg" alt="參訪展覽與藝術作品紀錄" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /></div><figcaption class="p-4 sm:p-5"><p class="font-displayEn text-xs uppercase tracking-[0.18em] text-brand-sageDark">03 / Art &amp; Culture</p><p class="font-serifTC text-base text-brand-ink mt-1">藝術展演參訪</p></figcaption></figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="services" class="py-24 lg:py-32 bg-brand-white border-t border-brand-champagne/20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         
