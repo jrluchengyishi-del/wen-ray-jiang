@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JR 旅程儀式 Journey Ritual｜東方命理智慧 × 現代芳香療法 × 個人專屬儀式</title>
+  <meta name="description" content="在喧囂中，為靈魂預留一處安棲之所。JR 旅程儀式由江汶叡創立，結合八字命理諮詢、中式芳療精油淋巴按摩與個人專屬香膏調製，為每一段人生旅程留下一場專屬於自己的儀式。" />
+
+  <!-- Google Fonts: 襯線體 (Noto Serif TC & Cormorant Garamond) 與 無襯線體 (Noto Sans TC & Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              white: '#F7F4EC',
+              warmWhite: '#F7F4EC',
+              mistGray: '#EAECE7',
+              ink: '#18362F',
+              inkLight: '#24483E',
+              inkMuted: '#60766D',
+              sage: '#A8B8A0',
+              sageDark: '#24483E',
+              sageLight: '#EAECE7',
+              champagne: '#C8A45D',
+              champagneLight: '#F7F4EC',
+              /* 保留原始科技設計中的輔助微光色（僅用於極少量互動狀態與細微強調） */
+              techBlue: '#24483E',
+              royalPurple: '#A99BB8',
+              mintGreen: '#24483E'
+            }
+          },
+          fontFamily: {
+            serifTC: ['"Noto Serif TC"', '"Songti TC"', 'serif'],
+            sansTC: ['"Noto Sans TC"', '"Inter"', 'sans-serif'],
+            displayEn: ['"Cormorant Garamond"', ' Georgia', 'serif'],
+            monoEn: ['"Inter"', 'monospace']
+          },
+          boxShadow: {
+            'editorial': '0 20px 50px -15px rgba(48, 54, 49, 0.06)',
+            'card-hover': '0 28px 60px -15px rgba(155, 174, 155, 0.22)',
+            'cta-glow': '0 0 28px rgba(155, 174, 155, 0.45), 0 0 12px rgba(16, 185, 129, 0.18)'
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root {
+      --bg-warm: #F7F4EC;
+      --bg-mist: #EAECE7;
+      --text-ink: #18362F;
+      --accent-sage: #A8B8A0;
+      --accent-gold: #C8A45D;
+      --micro-mint: #24483E;
+      --micro-blue: #24483E;
+      --micro-purple: #A99BB8;
+    }
+
+    body {
+      background-color: var(--bg-warm);
+      color: var(--text-ink);
+      font-family: 'Noto Sans TC', 'Inter', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Keep the solutions block immediately before the booking block. */
+    main {
+      display: flex;
+      flex-direction: column;
+    }
+
+    main section {
+      order: 1;
+    }
+
+    #solutions {
+      order: 8;
+    }
+
+    #contact {
+      order: 8.5;
+    }
+
+    #booking {
+      order: 9;
+    }
+
+    /* 固定導覽列錨點偏移，避免遮擋各區塊標題 */
+    section[id] {
+      scroll-margin-top: 5.5rem;
+    }
+
+    /* 細緻植物與東方宣紙微紋理背景 */
+    .subtle-grid-bg {
+      background-image:
+        radial-gradient(circle at 18% 22%, rgba(155, 174, 155, 0.14) 0%, transparent 45%),
+        radial-gradient(circle at 82% 75%, rgba(197, 172, 131, 0.12) 0%, transparent 50%),
+        linear-gradient(to right, rgba(48, 54, 49, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(48, 54, 49, 0.025) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 64px 64px, 64px 64px;
+    }
+
+    /* 呼吸感光暈動畫 */
+    @keyframes breatheAura {
+      0%, 100% {
+        transform: scale(1) translate(0, 0);
+        opacity: 0.45;
+      }
+      50% {
+        transform: scale(1.08) translate(8px, -10px);
+        opacity: 0.7;
+      }
+    }
+
+    .animate-breathe {
+      animation: breatheAura 9s ease-in-out infinite;
+    }
+
+    /* 打字機游標柔和呼吸效果 */
+    @keyframes softBlink {
+      0%, 100% { opacity: 0.85; }
+      50% { opacity: 0.15; }
+    }
+
+    .typewriter-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.1em;
+      background-color: #C8A45D;
+      vertical-align: middle;
+      margin-left: 4px;
+      animation: softBlink 1.3s ease-in-out infinite;
+    }
+
+    /* 區塊進入視窗時的淡入與輕微位移 */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1), transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 預約按鈕與 Status: Ready to Connect 裝飾性微互動 */
+    .ritual-cta-btn {
+      position: relative;
+      background: rgba(255, 255, 255, 0.92);
+      color: #18362F;
+      border: 1px solid rgba(197, 172, 131, 0.55);
+      box-shadow: 0 8px 24px -6px rgba(48, 54, 49, 0.08);
+      transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .ritual-cta-btn:hover,
+    .ritual-cta-btn:focus-visible {
+      transform: translateY(-2px);
+      background: #F7F4EC;
+      border-color: #A8B8A0;
+      box-shadow: 0 14px 32px -6px rgba(155, 174, 155, 0.42), 0 0 16px rgba(16, 185, 129, 0.16);
+    }
+
+    .ritual-cta-btn:active {
+      transform: translateY(0);
+    }
+
+    /* 裝飾性狀態文字 Status: Ready to Connect */
+    .status-badge-micro {
+      transition: all 0.35s ease;
+      opacity: 0.72;
+    }
+
+    .ritual-cta-wrapper:hover .status-badge-micro,
+    .ritual-cta-wrapper:focus-within .status-badge-micro {
+      opacity: 1;
+      transform: translateX(3px);
+      border-color: rgba(16, 185, 129, 0.4);
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    /* 服務卡片與圖片優雅縮放 */
+    .service-card {
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.45s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 60px -15px rgba(155, 174, 155, 0.25);
+      border-color: rgba(197, 172, 131, 0.65);
+    }
+
+    .service-card .card-img-zoom {
+      transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .service-card:hover .card-img-zoom {
+      transform: scale(1.045);
+    }
+
+    /* 尊重 prefers-reduced-motion 無障礙設定 */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto !important;
+      }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .reveal-item {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="selection:bg-brand-sage/30 selection:text-brand-ink">
+
+  <!-- 頂部導覽列 Sticky Navigation -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-brand-warmWhite/85 backdrop-blur-md border-b border-brand-champagne/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-20 flex items-center justify-between">
+      
+      <!-- 品牌識別 Logo -->
+      <a href="#hero" class="group flex items-center gap-3.5 focus:outline-none" aria-label="JR 旅程儀式 首頁">
+        <div class="w-10 h-10 rounded-full border border-brand-champagne/70 bg-brand-white flex items-center justify-center shadow-sm group-hover:border-brand-sage transition-colors">
+          <span class="font-displayEn text-xl font-semibold tracking-wider text-brand-ink">JR</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serifTC text-base sm:text-lg font-medium tracking-[0.16em] text-brand-ink">JR 旅程儀式</span>
+          <span class="font-displayEn text-[11px] tracking-[0.24em] uppercase text-brand-inkMuted -mt-0.5">Journey Ritual</span>
+        </div>
+      </a>
+
+      <!-- 桌面版導覽連結 -->
+      <nav class="hidden lg:flex items-center gap-8" aria-label="主要導覽">
+        <a href="#philosophy" data-nav-link="philosophy" class="nav-item text-sm tracking-widest text-brand-inkLight hover:text-brand-ink transition-colors py-1 border-b-2 border-transparent">品牌理念</a>
+        <a href="#founder" data-nav-link="founder" class="nav-item text-sm tracking-widest text-brand-inkLight hover:text-brand-ink transition-colors py-1 border-b-2 border-transparent">關於創辦人</a>
+        <a href="#services" data-nav-link="services" class="nav-item text-sm tracking-widest text-brand-inkLight hover:text-brand-ink transition-colors py-1 border-b-2 border-transparent">專屬服務</a>
+        <a href="#approach" data-nav-link="approach" class="nav-item text-sm tracking-widest text-brand-inkLight hover:text-brand-ink transition-colors py-1 border-b-2 border-transparent">中式芳療</a>
+        <a href="#ritual-objects" data-nav-link="ritual-objects" class="nav-item text-sm tracking-widest text-brand-inkLight hover:text-brand-ink transition-colors py-1 border-b-2 border-transparent">體驗與器物</a>
+        <a href="#faq" data-nav-link="faq" class="nav-item text-sm tracking-widest text-brand-inkLight hover:text-brand-ink transition-colors py-1 border-b-2 border-transparent">常見問題</a>
+      </nav>
+
+      <!-- 桌面版右側預約按鈕 -->
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="https://calendar.app.google/j2qQkH8wEM1AddJX7"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="ritual-cta-btn px-5 py-2.5 rounded-full text-xs tracking-[0.15em] font-medium flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-mintGreen"></span>
+          <span>預約專屬體驗</span>
+          <svg class="w-3.5 h-3.5 text-brand-champagne" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- 手機版選單開啟按鈕 -->
+      <button id="mobile-menu-btn"
+              type="button"
+              class="lg:hidden p-2.5 rounded-xl border border-brand-champagne/40 bg-brand-white text-brand-ink focus:outline-none focus:ring-2 focus:ring-brand-sage"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="開啟主選單">
+        <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M4 7h16M4 12h16M4 17h12" />
+        </svg>
+        <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- 手機版下拉導覽選單 -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-brand-warmWhite/98 backdrop-blur-xl border-b border-brand-champagne/30 px-6 pt-4 pb-8 shadow-editorial">
+      <nav class="flex flex-col space-y-3" aria-label="行動裝置導覽">
+        <a href="#philosophy" class="mobile-nav-link py-2.5 text-base tracking-widest text-brand-ink border-b border-brand-mistGray">01. 品牌理念 Brand Philosophy</a>
+        <a href="#founder" class="mobile-nav-link py-2.5 text-base tracking-widest text-brand-ink border-b border-brand-mistGray">02. 關於創辦人 About the Founder</a>
+        <a href="#services" class="mobile-nav-link py-2.5 text-base tracking-widest text-brand-ink border-b border-brand-mistGray">03. 專屬服務 Signature Experiences</a>
+        <a href="#approach" class="mobile-nav-link py-2.5 text-base tracking-widest text-brand-ink border-b border-brand-mistGray">04. 中式芳療 Our Approach</a>
+        <a href="#ritual-objects" class="mobile-nav-link py-2.5 text-base tracking-widest text-brand-ink border-b border-brand-mistGray">05. 體驗流程與專屬香膏 Your Ritual</a>
+        <a href="#testimonials" class="mobile-nav-link py-2.5 text-base tracking-widest text-brand-ink border-b border-brand-mistGray">06. 顧客回饋 Testimonials</a>
+        <a href="#faq" class="mobile-nav-link py-2.5 text-base tracking-widest text-brand-ink border-b border-brand-mistGray">07. 常見問題 FAQ</a>
+      </nav>
+      <div class="mt-6 pt-2 flex flex-col gap-2">
+        <a href="https://calendar.app.google/j2qQkH8wEM1AddJX7"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="ritual-cta-btn w-full py-3.5 px-6 rounded-full text-center text-sm tracking-[0.18em] font-medium flex items-center justify-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-brand-mintGreen"></span>
+          <span>預約專屬體驗</span>
+        </a>
+        <p class="text-center font-monoEn text-[11px] tracking-widest text-brand-inkMuted">
+          Status: Ready to Connect · Google Calendar 線上預約
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 01. 首頁 Hero Section -->
+    <section id="hero" class="relative min-h-screen pt-28 pb-16 lg:pt-32 lg:pb-24 flex items-center subtle-grid-bg overflow-hidden">
+      <!-- 背景香氣微粒與柔和呼吸光暈 Canvas -->
+      <canvas id="aroma-canvas" class="absolute inset-0 w-full h-full pointer-events-none opacity-75" aria-hidden="true"></canvas>
+
+      <!-- 柔和環境光暈裝飾 -->
+      <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-brand-sage/15 blur-3xl animate-breathe pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute bottom-10 right-10 w-[28rem] h-[28rem] rounded-full bg-brand-champagne/15 blur-3xl animate-breathe pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+          
+          <!-- 左側：品牌主張、打字機主標題與雙行動入口 (佔 7 欄) -->
+          <div class="lg:col-span-7 space-y-8">
+            
+            <!-- 品牌識別與核心定位膠囊 -->
+            <div class="inline-flex flex-wrap items-center gap-2.5 px-4 py-1.5 rounded-full bg-brand-white/85 border border-brand-champagne/40 shadow-sm">
+              <span class="font-displayEn text-xs font-semibold tracking-[0.22em] uppercase text-brand-sageDark">JR · Journey Ritual</span>
+              <span class="text-brand-champagne">|</span>
+              <span class="text-xs tracking-[0.14em] text-brand-inkLight">東方命理智慧 × 現代芳香療法 × 個人專屬儀式</span>
+            </div>
+
+            <!-- 動態打字機主標題（預留最小高度避免換行與版面跳動） -->
+            <div class="min-h-[5.5rem] sm:min-h-[6.5rem] lg:min-h-[7.5rem] flex items-center">
+              <h1 class="font-serifTC text-2xl sm:text-4xl lg:text-[2.65rem] font-medium leading-[1.45] sm:leading-[1.4] tracking-[0.06em] text-brand-ink">
+                <span id="hero-typewriter" aria-label="「在喧囂中，為靈魂預留一處安棲之所。」">「在喧囂中，為靈魂預留一處安棲之所。」</span><span id="hero-cursor" class="typewriter-cursor" aria-hidden="true"></span>
+              </h1>
+            </div>
+
+            <!-- 品牌理念輔助短句 -->
+            <p class="text-base sm:text-lg text-brand-inkLight leading-relaxed tracking-wide max-w-2xl font-light">
+              從東方命理的覺察，到植物香氣的陪伴，為每一段人生旅程，留下一場專屬於自己的儀式。在理解自身特質與梳理思緒的同時，讓呼吸、觸感與香氣成為日常中最安定的力量。
+            </p>
+
+            <!-- 首頁雙行動入口 CTA 與裝飾性微互動狀態 -->
+            <div class="pt-2 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 ritual-cta-wrapper">
+              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                <!-- 主要按鈕：預約專屬體驗 -->
+                <a href="https://calendar.app.google/j2qQkH8wEM1AddJX7"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="ritual-cta-btn px-8 py-4 rounded-full text-sm sm:text-base tracking-[0.18em] font-medium inline-flex items-center justify-center gap-3">
+                  <span>預約專屬體驗</span>
+                  <svg class="w-4 h-4 text-brand-sageDark" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+
+                <!-- 次要按鈕：探索品牌故事 -->
+                <a href="#philosophy"
+                   class="px-7 py-4 rounded-full text-sm sm:text-base tracking-[0.16em] text-brand-inkLight hover:text-brand-ink bg-brand-mistGray/70 hover:bg-brand-white border border-transparent hover:border-brand-champagne/40 transition-all inline-flex items-center justify-center gap-2">
+                  <span>探索品牌故事</span>
+                </a>
+              </div>
+
+              <!-- 裝飾性微互動狀態徽章 Status: Ready to Connect -->
+              <div class="status-badge-micro inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-white/75 border border-brand-sage/35 self-start sm:self-center"
+                   aria-label="裝飾性互動提示：Status Ready to Connect">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-mintGreen opacity-60"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-mintGreen"></span>
+                </span>
+                <span class="font-monoEn text-[11px] tracking-wider text-brand-inkLight">Status: Ready to Connect</span>
+              </div>
+            </div>
+
+            <!-- 品牌核心維度細緻摘要 -->
+            <div class="pt-6 border-t border-brand-champagne/25 grid grid-cols-3 gap-4 max-w-xl">
+              <div>
+                <p class="font-displayEn text-xs uppercase tracking-[0.2em] text-brand-champagne">01 · Bazi Insight</p>
+                <p class="font-serifTC text-sm sm:text-base text-brand-ink mt-0.5">八字命理諮詢</p>
+                <p class="text-xs text-brand-inkMuted mt-0.5">看見特質，梳理方向</p>
+              </div>
+              <div>
+                <p class="font-displayEn text-xs uppercase tracking-[0.2em] text-brand-sageDark">02 · Botanical Touch</p>
+                <p class="font-serifTC text-sm sm:text-base text-brand-ink mt-0.5">芳療淋巴按摩</p>
+                <p class="text-xs text-brand-inkMuted mt-0.5">香氣觸感，身心留白</p>
+              </div>
+              <div>
+                <p class="font-displayEn text-xs uppercase tracking-[0.2em] text-brand-champagne">03 · Daily Ritual</p>
+                <p class="font-serifTC text-sm sm:text-base text-brand-ink mt-0.5">個人專屬香膏</p>
+                <p class="text-xs text-brand-inkMuted mt-0.5">隨身香氣，日常儀式</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 右側：精品雜誌感視覺構成 (佔 5 欄) -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative mx-auto max-w-md lg:max-w-none">
+              <!-- 外層東方窗櫺弧線裝飾框 -->
+              <div class="relative rounded-t-[11rem] rounded-b-3xl overflow-hidden border border-brand-champagne/45 bg-brand-mistGray shadow-editorial aspect-[4/5]">
+                <!--
+                  [圖片替換標註 - 首頁主視覺]
+                  圖片來源：Unsplash 穩定植物光影與精油器皿意象圖
+                  日後可替換為 JR 旅程儀式空間實景或專屬香膏特寫攝影
+                -->
+                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85"
+                     onerror="this.onerror=null;this.src='https://placehold.co/800x1000/F3F4F1/303631?text=JR+Journey+Ritual';"
+                     alt="柔和日光映照下的植物葉片、精油玻璃器皿與沉靜木質空間氛圍"
+                     class="w-full h-full object-cover object-center" />
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-ink/45 via-transparent to-transparent"></div>
+
+                <!-- 畫面底部詩意圖說 -->
+                <div class="absolute bottom-6 left-6 right-6 text-brand-white">
+                  <p class="font-displayEn text-xs tracking-[0.28em] uppercase text-brand-champagneLight">Oriental Wisdom &amp; Contemporary Aroma</p>
+                  <p class="font-serifTC text-sm sm:text-base tracking-wider mt-1">以理解自己為起點，將平靜帶回日常的每一次呼吸。</p>
+                </div>
+              </div>
+
+              <!-- 懸浮質感小卡：五感與五行意象 -->
+              <div class="hidden sm:flex items-center gap-3.5 absolute -bottom-5 -left-6 bg-brand-white/95 backdrop-blur-md px-5 py-4 rounded-2xl border border-brand-champagne/40 shadow-editorial">
+                <div class="w-10 h-10 rounded-full bg-brand-sageLight flex items-center justify-center text-brand-sageDark">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-xs tracking-widest text-brand-inkMuted">品牌核心哲學</p>
+                  <p class="font-serifTC text-sm font-medium text-brand-ink">覺察 · 平衡 · 專屬 · 儀式 · 重塑</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 向下探索視覺提示 -->
+        <div class="mt-14 lg:mt-16 flex justify-center">
+          <a href="#philosophy" class="group inline-flex flex-col items-center gap-2 text-xs tracking-[0.25em] text-brand-inkMuted hover:text-brand-ink transition-colors" aria-label="向下滾動探索品牌理念">
+            <span class="font-displayEn uppercase">Scroll to Explore</span>
+            <span class="w-7 h-11 rounded-full border border-brand-champagne/60 flex items-start justify-center p-1.5 group-hover:border-brand-sage transition-colors">
+              <span class="w-1 h-2.5 rounded-full bg-brand-champagne animate-bounce"></span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02. 品牌理念 Brand Philosophy -->
+    <section id="philosophy" class="py-24 lg:py-32 bg-brand-white border-t border-brand-champagne/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        
+        <!-- 雙欄編輯式引言 -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start reveal-item">
+          <div class="lg:col-span-5">
+            <p class="font-displayEn text-xs sm:text-sm uppercase tracking-[0.28em] text-brand-sageDark">01 / Brand Philosophy</p>
+            <h2 class="font-serifTC text-2xl sm:text-3xl lg:text-4xl font-medium text-brand-ink tracking-wider leading-snug mt-3">
+              理解當下的自己，<br />是所有安定與重塑的起點。
+            </h2>
+            <div class="w-14 h-[1.5px] bg-brand-champagne mt-6"></div>
+          </div>
+
+          <div class="lg:col-span-7 space-y-5 text-brand-inkLight leading-relaxed text-base sm:text-[17px] font-light">
+            <p>
+              在現代高壓的生活步調中，我們常在工作、關係與人生選擇的轉折點裡馬不停蹄地前行，卻鮮少有機會真正停下腳步，傾聽內在的聲音與身體的疲憊。
+            </p>
+            <p>
+              <strong class="font-medium text-brand-ink">「JR 旅程儀式」</strong>不營造神祕、恐懼或宿命論的氛圍。我們將<span class="text-brand-ink font-normal">東方八字命理</span>視為一份理解個人特質與當下課題的溫柔參考地圖；並透過<span class="text-brand-ink font-normal">現代芳香療法、淋巴按摩與個人專屬香膏</span>，將抽象的自我覺察，轉化為雙手可觸、呼吸可感的具體生活儀式。
+            </p>
+          </div>
+        </div>
+
+        <!-- 品牌五大核心精神卡片 -->
+        <div class="mt-16 lg:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 reveal-item">
+          <!-- 1. 覺察 -->
+          <article class="p-6 rounded-2xl bg-brand-warmWhite border border-brand-champagne/30 hover:border-brand-sage transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs font-displayEn tracking-[0.2em] text-brand-champagne">
+                <span>01 / AWARENESS</span>
+                <span class="w-2 h-2 rounded-full bg-brand-sage/60"></span>
+              </div>
+              <h3 class="font-serifTC text-xl font-medium text-brand-ink mt-4">覺察</h3>
+              <p class="text-sm text-brand-inkLight leading-relaxed mt-3 font-light">
+                理解自己當下的狀態，在紛雜的日常裡，重新看見自己真實的需求。
+              </p>
+            </div>
+            <span class="mt-6 text-[11px] tracking-widest text-brand-inkMuted">向內梳理 · 看見特質</span>
+          </article>
+
+          <!-- 2. 平衡 -->
+          <article class="p-6 rounded-2xl bg-brand-warmWhite border border-brand-champagne/30 hover:border-brand-sage transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs font-displayEn tracking-[0.2em] text-brand-champagne">
+                <span>02 / BALANCE</span>
+                <span class="w-2 h-2 rounded-full bg-brand-sage/60"></span>
+              </div>
+              <h3 class="font-serifTC text-xl font-medium text-brand-ink mt-4">平衡</h3>
+              <p class="text-sm text-brand-inkLight leading-relaxed mt-3 font-light">
+                在忙碌的生活中，透過香氣與觸感，為身心保留安定與喘息的空間。
+              </p>
+            </div>
+            <span class="mt-6 text-[11px] tracking-widest text-brand-inkMuted">身心留白 · 安定節奏</span>
+          </article>
+
+          <!-- 3. 專屬 -->
+          <article class="p-6 rounded-2xl bg-brand-warmWhite border border-brand-champagne/30 hover:border-brand-sage transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs font-displayEn tracking-[0.2em] text-brand-champagne">
+                <span>03 / BESPOKE</span>
+                <span class="w-2 h-2 rounded-full bg-brand-sage/60"></span>
+              </div>
+              <h3 class="font-serifTC text-xl font-medium text-brand-ink mt-4">專屬</h3>
+              <p class="text-sm text-brand-inkLight leading-relaxed mt-3 font-light">
+                不以制式化流程套用每個人，而是細膩傾聽，重視個別需求與感官體驗。
+              </p>
+            </div>
+            <span class="mt-6 text-[11px] tracking-widest text-brand-inkMuted">因人而異 · 客製調配</span>
+          </article>
+
+          <!-- 4. 儀式 -->
+          <article class="p-6 rounded-2xl bg-brand-warmWhite border border-brand-champagne/30 hover:border-brand-sage transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs font-displayEn tracking-[0.2em] text-brand-champagne">
+                <span>04 / RITUAL</span>
+                <span class="w-2 h-2 rounded-full bg-brand-sage/60"></span>
+              </div>
+              <h3 class="font-serifTC text-xl font-medium text-brand-ink mt-4">儀式</h3>
+              <p class="text-sm text-brand-inkLight leading-relaxed mt-3 font-light">
+                把短暫的諮詢、香氣與觸感，轉化為可以融入日常生活的自我照顧方式。
+              </p>
+            </div>
+            <span class="mt-6 text-[11px] tracking-widest text-brand-inkMuted">呼吸片刻 · 日常陪伴</span>
+          </article>
+
+          <!-- 5. 重塑 -->
+          <article class="p-6 rounded-2xl bg-brand-warmWhite border border-brand-champagne/30 hover:border-brand-sage transition-all flex flex-col justify-between sm:col-span-2 lg:col-span-1">
+            <div>
+              <div class="flex items-center justify-between text-xs font-displayEn tracking-[0.2em] text-brand-champagne">
+                <span>05 / RENEWAL</span>
+                <span class="w-2 h-2 rounded-full bg-brand-sage/60"></span>
+              </div>
+              <h3 class="font-serifTC text-xl font-medium text-brand-ink mt-4">重塑</h3>
+              <p class="text-sm text-brand-inkLight leading-relaxed mt-3 font-light">
+                從理解自己開始，放下不必要的焦慮，重新找回面對生活與未來的方向感。
+              </p>
+            </div>
+            <span class="mt-6 text-[11px] tracking-widest text-brand-inkMuted">從容前行 · 找回方向</span>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 03. 關於我 About the Founder -->
+    <section id="founder" class="py-24 lg:py-32 bg-brand-warmWhite border-t border-brand-champagne/20 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          <!-- 左側：創辦人形象照預留區與專業資歷卡 (佔 5 欄) -->
+          <div class="lg:col-span-5 reveal-item">
+            <div class="relative rounded-3xl overflow-hidden border border-brand-champagne/50 bg-brand-mistGray shadow-editorial">
+              <!--
+                [創辦人照片替換位置說明]
+                遵循品牌規範：人物照以創辦人江汶叡真實照片為優先，不以他人照片偽裝為創辦人本人。
+                此處採用東方靜謐工作室植物與光影意象作為背景，並清楚標示為「創辦人真實形象照預留版位」，方便直接替換 src。
+              -->
+              <div class="aspect-[4/5] relative flex flex-col justify-between p-7 sm:p-9 bg-gradient-to-br from-[#EAECE7] via-[#F7F4EC] to-[#D8D8C8]">
+                <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=80"
+                     onerror="this.onerror=null;this.src='https://placehold.co/800x1000/EAECE7/303631?text=Founder+Portrait+Placeholder';"
+                     alt="JR 旅程儀式芳療與命理諮詢空間意象（待替換創辦人江汶叡真實形象照）"
+                     class="absolute inset-0 w-full h-full object-cover opacity-35 mix-blend-multiply" />
+                
+                <div class="relative z-10 flex items-center justify-between">
+                  <span class="px-3.5 py-1.5 rounded-full bg-brand-white/90 border border-brand-champagne/50 text-[11px] tracking-widest text-brand-ink">
+                    創辦人形象照預留位置
+                  </span>
+                  <span class="font-displayEn text-sm tracking-[0.2em] text-brand-inkLight">FOUNDER</span>
+                </div>
+
+                <!-- 中央溫馨提示與視覺識別 -->
+                <div class="relative z-10 my-auto text-center py-8 px-4 rounded-2xl bg-brand-white/75 backdrop-blur-sm border border-brand-champagne/40">
+                  <div class="w-16 h-16 mx-auto rounded-full border border-brand-champagne flex items-center justify-center bg-brand-warmWhite">
+                    <span class="font-displayEn text-2xl font-semibold tracking-widest text-brand-ink">JR</span>
+                  </div>
+                  <p class="font-serifTC text-xl text-brand-ink font-medium tracking-widest mt-4">江汶叡</p>
+                  <p class="text-xs tracking-[0.18em] text-brand-inkLight mt-1">JR 旅程儀式創辦人</p>
+                  <p class="text-xs text-brand-inkMuted mt-3 max-w-xs mx-auto leading-relaxed">
+                    此版位預留予創辦人江汶叡個人形象攝影（可於程式碼中直接替換圖片網址）。
+                  </p>
+                </div>
+
+                <!-- 底部簽名式引言 -->
+                <div class="relative z-10 pt-4 border-t border-brand-ink/10">
+                  <p class="font-serifTC text-xs sm:text-sm text-brand-ink italic tracking-wide">
+                    「每一次的呼吸與每一個人生節點，都是一場值得細細品味的旅程。」
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 專業背景與實務經驗摘要卡（嚴格依據提供之事實） -->
+            <div class="mt-6 p-6 sm:p-7 rounded-2xl bg-brand-white border border-brand-champagne/35 shadow-sm space-y-4">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2 h-2 rounded-full bg-brand-sageDark"></span>
+                <h3 class="font-serifTC text-base font-medium tracking-wider text-brand-ink">專業背景與實務經驗</h3>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4 pt-2 border-t border-brand-mistGray">
+                <div class="p-3.5 rounded-xl bg-brand-warmWhite">
+                  <p class="font-displayEn text-2xl sm:text-3xl font-semibold text-brand-ink">3 <span class="text-sm font-normal text-brand-inkLight">年</span></p>
+                  <p class="text-xs text-brand-inkLight mt-1">專業從業歷程與實務累積</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-brand-warmWhite">
+                  <p class="font-displayEn text-2xl sm:text-3xl font-semibold text-brand-ink">50+ <span class="text-sm font-normal text-brand-inkLight">位</span></p>
+                  <p class="text-xs text-brand-inkLight mt-1">親自陪伴並深度服務個案</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-xl bg-brand-sageLight/45 border border-brand-sage/30">
+                <p class="text-xs font-medium tracking-wider text-brand-ink">國際芳療認證背景</p>
+                <p class="text-xs sm:text-sm text-brand-inkLight mt-1 leading-relaxed">
+                  具備<strong class="font-medium text-brand-ink">美國國家整體芳療協會（NAHA）Level I、Level II</strong> 課程相關認證背景，持續重視芳療實務中的安全性、精油使用知識與個別需求評估。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 右側：創辦人故事與中式芳療理念敘事 (佔 7 欄) -->
+          <div class="lg:col-span-7 space-y-8 reveal-item">
+            <div>
+              <p class="font-displayEn text-xs sm:text-sm uppercase tracking-[0.28em] text-brand-sageDark">02 / About the Founder</p>
+              <h2 class="font-serifTC text-2xl sm:text-3xl lg:text-4xl font-medium text-brand-ink tracking-wider leading-snug mt-3">
+                江汶叡｜從命理探索到芳療實踐，<br class="hidden sm:inline" />陪伴人們找回生活的從容與安定。
+              </h2>
+            </div>
+
+            <div class="space-y-4 text-brand-inkLight leading-relaxed text-base font-light">
+              <p>
+                在現代高壓的生活步調中，尋找內在的平靜與外在的平衡，已成為許多人的渴望。我是江汶叡，「JR 旅程儀式」的創辦人。我深信，每一次的呼吸與每一個人生節點，都是一場值得細細品味的旅程。
+              </p>
+              <p>
+                致力於將東方智慧與現代芳香療法巧妙結合，我期盼為每位客戶打造獨特的個人化體驗，陪伴人們重新找回生活的從容與安定。
+              </p>
+            </div>
+
+            <!-- 歷程段落一：命理啟蒙，走入芳香療法的世界 -->
+            <div class="p-6 sm:p-8 rounded-2xl bg-brand-white border border-brand-champagne/30 space-y-3">
+              <span class="font-displayEn text-xs uppercase tracking-[0.24em] text-brand-champagne">Chapter I · From Destiny Inquiry to Botanical Care</span>
+              <h3 class="font-serifTC text-xl font-medium text-brand-ink">命理啟蒙，走入芳香療法的世界</h3>
+              <p class="text-sm sm:text-base text-brand-inkLight leading-relaxed font-light">
+                在探索生命軌跡的過程中，透過對<span class="text-brand-ink font-normal">八字命理、奇門遁甲與塔羅占卜</span>等不同領域的研究，我逐漸發現，人們在面對人生課題時，除了尋找方向，也需要一個能夠停下來、重新理解自己的空間。
+              </p>
+              <p class="text-sm sm:text-base text-brand-inkLight leading-relaxed font-light">
+                這份對人生課題的探索，引領我進一步走入芳香療法的世界。我期望不只陪伴個案梳理思緒，也能透過香氣、觸感與個人化的儀式，讓自我照顧成為生活中可以實踐的一部分。
+              </p>
+            </div>
+
+            <!-- 歷程段落二：中式芳療：融合東方觀點與現代香氣 -->
+            <div class="p-6 sm:p-8 rounded-2xl bg-brand-white border border-brand-champagne/30 space-y-3">
+              <span class="font-displayEn text-xs uppercase tracking-[0.24em] text-brand-sageDark">Chapter II · Oriental Perspective &amp; Modern Aromatherapy</span>
+              <h3 class="font-serifTC text-xl font-medium text-brand-ink">中式芳療：融合東方觀點與現代香氣</h3>
+              <p class="text-sm sm:text-base text-brand-inkLight leading-relaxed font-light">
+                我將傳統漢方理論中的五行與平衡觀點，結合西方芳香療法的精油應用，發展出具有個人特色的<strong class="font-medium text-brand-ink">「中式芳療」</strong>品牌理念。
+              </p>
+              <p class="text-sm sm:text-base text-brand-inkLight leading-relaxed font-light">
+                在香氣設計上，會考量不同精油的氣味特徵、調性、搭配關係，以及客戶的使用需求。例如<span class="text-brand-ink font-normal">檀香、乳香、廣藿香</span>的沉穩木質與樹脂氣息，以及<span class="text-brand-ink font-normal">佛手柑、玫瑰天竺葵</span>等細膩而富有層次的香氣。希望透過個人化的香氣設計與適當的調養建議，打造兼具感官體驗、生活美學與個人覺察的芳療服務。
+              </p>
+              <p class="text-xs text-brand-inkMuted pt-2 border-t border-brand-mistGray">
+                ※ 理念說明：「中式芳療」與五行平衡觀點為品牌之生活美學、感官體驗與自我覺察設計理念，非屬醫療診斷或經科學實證之醫學治療機制。
+              </p>
+            </div>
+
+            <!-- 歷程段落三：關於 JR 旅程儀式 -->
+            <div class="p-6 sm:p-7 rounded-2xl bg-brand-mistGray/75 border-l-4 border-brand-champagne flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+              <div class="space-y-1.5">
+                <h3 class="font-serifTC text-lg font-medium text-brand-ink">關於 JR 旅程儀式</h3>
+                <p class="text-sm text-brand-inkLight leading-relaxed font-light">
+                  「JR 旅程儀式」不僅僅是一個品牌，更是一個引導人們重新與自己對話的空間。期待透過東方智慧、現代芳香療法與個人化體驗，陪伴每個人走過人生的不同階段，為日常生活開啟一場專屬於自己的儀式。
+                </p>
+              </div>
+              <a href="#services" class="shrink-0 px-5 py-3 rounded-full bg-brand-white text-brand-ink text-xs tracking-[0.16em] border border-brand-champagne/50 hover:border-brand-sage transition-colors text-center">
+                了解三項專屬服務 →
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. 專屬服務 Signature Experiences -->
+    <section id="services" class="py-24 lg:py-32 bg-brand-white border-t border-brand-champagne/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        
+        <!-- 服務區塊總標題與引言 -->
+        <div class="max-w-3xl mx-auto text-center space-y-4 reveal-item">
+          <p class="font-displayEn text-xs sm:text-sm uppercase tracking-[0.28em] text-brand-sageDark">03 / Signature Experiences</p>
+          <h2 class="font-serifTC text-2xl sm:text-3xl lg:text-4xl font-medium text-brand-ink tracking-wider leading-snug">
+            覺察與重塑：八字命理與專屬芳療的深度體驗
+          </h2>
+          <p class="text-base text-brand-inkLight leading-relaxed font-light pt-2">
+            在人生的旅途中，我們難免會因外在的喧囂與生活壓力，而感到迷茫或停滯。JR 旅程儀式結合東方命理觀點與現代芳香療法，希望協助每個人更理解當下的需求，在繁忙生活中重新找回屬於自己的節奏。
+          </p>
+        </div>
+
+        <!-- 互動式「當下狀態覺察引導」：幫助訪客快速找到最適合的服務 -->
+        <div class="mt-12 p-6 sm:p-8 rounded-3xl bg-brand-warmWhite border border-brand-champagne/35 reveal-item">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+            <div>
+              <span class="text-xs tracking-[0.18em] text-brand-sageDark font-medium">不確定從哪一項體驗開始？</span>
+              <h3 class="font-serifTC text-lg sm:text-xl text-brand-ink mt-1">請選擇最貼近您當下心境的狀態，為您標示推薦的旅程入口：</h3>
+            </div>
+            <div class="flex flex-wrap gap-2.5" role="group" aria-label="當下狀態覺察篩選">
+              <button type="button" data-filter-state="all" class="state-filter-btn active px-4 py-2 rounded-full text-xs tracking-wider bg-brand-ink text-brand-white transition-all">
+                瀏覽全部體驗
+              </button>
+              <button type="button" data-filter-state="bazi" class="state-filter-btn px-4 py-2 rounded-full text-xs tracking-wider bg-brand-white text-brand-inkLight border border-brand-champagne/40 hover:border-brand-sage transition-all">
+                處於轉折點，想梳理方向
+              </button>
+              <button type="button" data-filter-state="aroma" class="state-filter-btn px-4 py-2 rounded-full text-xs tracking-wider bg-brand-white text-brand-inkLight border border-brand-champagne/40 hover:border-brand-sage transition-all">
+                工作緊繃疲憊，渴望放鬆喘息
+              </button>
+              <button type="button" data-filter-state="balm" class="state-filter-btn px-4 py-2 rounded-full text-xs tracking-wider bg-brand-white text-brand-inkLight border border-brand-champagne/40 hover:border-brand-sage transition-all">
+                希望有隨身香氣陪伴日常
+              </button>
+            </div>
+          </div>
+          <p id="state-recommendation-msg" class="text-xs text-brand-sageDark tracking-wider mt-4 hidden"></p>
+        </div>
+
+        <!-- 三張專屬服務卡片 -->
+        <div class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          
+          <!-- 服務一｜八字命理諮詢 -->
+          <article id="service-card-bazi" class="service-card rounded-3xl bg-brand-warmWhite border border-brand-champagne/35 overflow-hidden flex flex-col justify-between reveal-item">
+            <div>
+              <!-- 圖片與主題標籤 -->
+              <div class="relative h-60 overflow-hidden bg-brand-mistGray">
+                <!-- [圖片替換標註 - 服務一：八字命理諮詢] 東方茶席、光影與靜心書寫意象 -->
+                <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=80"
+                     onerror="this.onerror=null;this.src='https://placehold.co/800x500/F3F4F1/303631?text=Bazi+Consultation';"
+                     alt="沉靜的東方茶席與柔和光影，象徵八字命理諮詢的思緒梳理空間"
+                     class="card-img-zoom w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-ink/50 via-transparent to-transparent"></div>
+                <span class="absolute top-4 left-4 px-3.5 py-1 rounded-full bg-brand-white/90 text-[11px] tracking-[0.2em] font-displayEn uppercase text-brand-ink">
+                  Service 01 · Clarity
+                </span>
+                <p class="absolute bottom-4 left-5 right-5 text-xs tracking-widest text-brand-champagneLight">
+                  定位：看見自身特質，梳理人生方向。
+                </p>
+              </div>
+
+              <!-- 內文介紹 -->
+              <div class="p-7 sm:p-8 space-y-4">
+                <h3 class="font-serifTC text-2xl font-medium text-brand-ink tracking-wide">八字命理諮詢</h3>
+                <p class="text-sm text-brand-inkLight leading-relaxed font-light">
+                  八字不只是傳統命理中的推演工具，也可以作為理解個人特質、思考人生課題的參考。
+                </p>
+                <p class="text-sm text-brand-inkLight leading-relaxed font-light">
+                  透過命局五行、日主特質與整體命盤結構的解析，協助客戶整理自身的優勢、需要留意的課題與可能的選擇方向。重點不在於替人生下定論，而是讓客戶獲得更多理解自己與思考下一步的空間。
+                </p>
+
+                <!-- 重點標籤 -->
+                <div class="pt-2 flex flex-wrap gap-2">
+                  <span class="px-3 py-1 rounded-full bg-brand-white border border-brand-champagne/30 text-xs text-brand-inkLight">命局五行解析</span>
+                  <span class="px-3 py-1 rounded-full bg-brand-white border border-brand-champagne/30 text-xs text-brand-inkLight">日主特質探索</span>
+                  <span class="px-3 py-1 rounded-full bg-brand-white border border-brand-champagne/30 text-xs text-brand-inkLight">人生課題與方向整理</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 卡片底部雙按鈕：了解詳情 ＆ 預約諮詢 -->
+            <div class="px-7 pb-7 sm:px-8 sm:pb-8 pt-2 border-t border-brand-champagne/20 flex flex-col sm:flex-row gap-3">
+              <button type="button"
+                      data-service-modal="bazi"
+                      class="open-service-modal flex-1 py-3 px-4 rounded-full text-xs tracking-[0.15em] text-brand-ink bg-brand-white border border-brand-champagne/45 hover:border-brand-ink transition-colors text-center">
+                了解命理諮詢
+              </button>
+              <a href="https://calendar.app.google/j2qQkH8wEM1AddJX7"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="ritual-cta-btn flex-1 py-3 px-4 rounded-full text-xs tracking-[0.15em] font-medium text-center flex items-center justify-center gap-1.5">
+                <span>預約諮詢</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 服務二｜芳療精油淋巴按摩 -->
+          <article id="service-card-aroma" class="service-card rounded-3xl bg-brand-warmWhite border border-brand-champagne/35 overflow-hidden flex flex-col justify-between reveal-item">
+            <div>
+              <!-- 圖片與主題標籤 -->
+              <div class="relative h-60 overflow-hidden bg-brand-mistGray">
+                <!-- [圖片替換標註 - 服務二：芳療精油淋巴按摩] 精油瓶與溫潤療癒空間意象 -->
+                <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80"
+                     onerror="this.onerror=null;this.src='https://placehold.co/800x500/F3F4F1/303631?text=Aromatherapy+Massage';"
+                     alt="琥珀色精油瓶與柔和植物葉影，呈現芳療精油淋巴按摩的放鬆氛圍"
+                     class="card-img-zoom w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-ink/50 via-transparent to-transparent"></div>
+                <span class="absolute top-4 left-4 px-3.5 py-1 rounded-full bg-brand-white/90 text-[11px] tracking-[0.2em] font-displayEn uppercase text-brand-ink">
+                  Service 02 · Serenity
+                </span>
+                <p class="absolute bottom-4 left-5 right-5 text-xs tracking-widest text-brand-champagneLight">
+                  定位：透過香氣與觸感，為身心保留放鬆的空間。
+                </p>
+              </div>
+
+              <!-- 內文介紹 -->
+              <div class="p-7 sm:p-8 space-y-4">
+                <h3 class="font-serifTC text-2xl font-medium text-brand-ink tracking-wide">芳療精油淋巴按摩</h3>
+                <p class="text-sm text-brand-inkLight leading-relaxed font-light">
+                  以個人需求為出發點，考量精油的香氣特性、搭配關係與適當的使用方式，設計專屬的芳療按摩體驗。
+                </p>
+                <p class="text-sm text-brand-inkLight leading-relaxed font-light">
+                  運用檀香、乳香與廣藿香的沉穩氣息，或佛手柑、玫瑰天竺葵與其他適合的香氣層次，營造細膩而舒適的感官體驗。讓忙碌的日常有機會慢下來，透過呼吸、香氣與適當的按摩手法，重新感受身體與當下。
+                </p>
+
+                <!-- 重點標籤 -->
+                <div class="pt-2 flex flex-wrap gap-2">
+                  <span class="px-3 py-1 rounded-full bg-brand-white border border-brand-champagne/30 text-xs text-brand-inkLight">客製香氣調配</span>
+                  <span class="px-3 py-1 rounded-full bg-brand-white border border-brand-champagne/30 text-xs text-brand-inkLight">木質樹脂與花草層次</span>
+                  <span class="px-3 py-1 rounded-full bg-brand-white border border-brand-champagne/30 text-xs text-brand-inkLight">身心減壓與呼吸覺察</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 卡片底部雙按鈕：了解詳情 ＆ 預約體驗 -->
+            <div class="px-7 pb-7 sm:px-8 sm:pb-8 pt-2 border-t border-brand-champagne/20 flex flex-col sm:flex-row gap-3">
+              <button type="button"
+                      data-service-modal="aroma"
+                      class="open-service-modal flex-1 py-3 px-4 rounded-full text-xs tracking-[0.15em] text-brand-ink bg-brand-white border border-brand-champagne/45 hover:border-brand-ink transition-colors text-center">
+                了解芳療體驗
+              </button>
+              <a href="https://calendar.app.google/j2qQkH8wEM1AddJX7"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="ritual-cta-btn flex-1 py-3 px-4 rounded-full text-xs tracking-[0.15em] font-medium text-center flex items-center justify-center gap-1.5">
+                <span>預約體驗</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 服務三｜個人專屬香膏 -->
+          <article id="service-card-balm" class="service-card rounded-3xl bg-brand-warmWhite border border-brand-champagne/35 overflow-hidden flex flex-col justify-between reveal-item">
+            <div>
+              <!-- 圖片與主題標籤 -->
+              <div class="relative h-60 overflow-hidden bg-brand-mistGray">
+                <!-- [圖片替換標註 - 服務三：個人專屬香膏] 精緻金屬外殼與香膏質地意象 -->
+                <img src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&w=800&q=80"
+                     onerror="this.onerror=null;this.src='https://placehold.co/800x500/F3F4F1/303631?text=Bespoke+Solid+Balm';"
+                     alt="極簡金屬器皿與植物基底原料，展現 10g 個人專屬香膏的生活儀式感"
+                     class="card-img-zoom w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-ink/50 via-transparent to-transparent"></div>
+                <span class="absolute top-4 left-4 px-3.5 py-1 rounded-full bg-brand-white/90 text-[11px] tracking-[0.2em] font-displayEn uppercase text-brand-ink">
+                  Service 03 · Companion
+                </span>
+                <p class="absolute bottom-4 left-5 right-5 text-xs tracking-widest text-brand-champagneLight">
+                  定位：將專屬香氣帶進日常，延續生活儀式。
+                </p>
+              </div>
+
+              <!-- 內文介紹 -->
+              <div class="p-7 sm:p-8 space-y-4">
+                <div class="flex items-center justify-between gap-2">
+                  <h3 class="font-serifTC text-2xl font-medium text-brand-ink tracking-wide">個人專屬香膏</h3>
+                  <span class="px-2.5 py-0.5 rounded-full bg-brand-champagneLight text-[11px] tracking-wider text-brand-ink">預約洽詢制</span>
+                </div>
+                <p class="text-sm text-brand-inkLight leading-relaxed font-light">
+                  真正具有意義的儀式，不必侷限在特定空間。透過個人化的香氣設計，將精油與適合的基底材料調製成 <span class="text-brand-ink font-normal">10g 隨身香膏</span>，搭配具有<span class="text-brand-ink font-normal">彈簧按壓設計的精緻金屬替換匣</span>。
+                </p>
+                <p class="text-sm text-brand-inkLight leading-relaxed font-light">
+                  從包裝質感、香氣層次到日常使用情境，讓香膏成為可以隨身攜帶的生活配件。當想要稍作停留時，透過塗抹香膏與緩慢呼吸，建立屬於自己的日常儀式。
+                </p>
+
+                <!-- 重點標籤 -->
+                <div class="pt-2 flex flex-wrap gap-2">
+                  <span class="px-3 py-1 rounded-full bg-brand-white border border-brand-champagne/30 text-xs text-brand-inkLight">10g 隨身容量</span>
+                  <span class="px-3 py-1 rounded-full bg-brand-white border border-brand-champagne/30 text-xs text-brand-inkLight">彈簧按壓金屬替換匣</span>
+                  <span class="px-3 py-1 rounded-full bg-brand-white border border-brand-champagne/30 text-xs text-brand-inkLight">客製調香（洽詢訂製）</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 卡片底部雙按鈕：探索專屬香膏 ＆ 預約或洽詢 -->
+            <div class="px-7 pb-7 sm:px-8 sm:pb-8 pt-2 border-t border-brand-champagne/20 flex flex-col sm:flex-row gap-3">
+              <button type="button"
+                      data-service-modal="balm"
+                      class="open-service-modal flex-1 py-3 px-4 rounded-full text-xs tracking-[0.15em] text-brand-ink bg-brand-white border border-brand-champagne/45 hover:border-brand-ink transition-colors text-center">
+                探索專屬香膏
+              </button>
+              <a href="https://calendar.app.google/j2qQkH8wEM1AddJX7"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="ritual-cta-btn flex-1 py-3 px-4 rounded-full text-xs tracking-[0.15em] font-medium text-center flex items-center justify-center gap-1.5">
+                <span>預約或洽詢</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. 品牌特色 Our Approach -->
+    <section id="approach" class="py-24 lg:py-32 bg-brand-mistGray/70 border-t border-brand-champagne/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal-item">
+          <!-- 左側：四大品牌方法論 -->
+          <div class="lg:col-span-6 space-y-6">
+            <p class="font-displayEn text-xs sm:text-sm uppercase tracking-[0.28em] text-brand-sageDark">04 / Our Approach</p>
+            <h2 class="font-serifTC text-2xl sm:text-3xl lg:text-4xl font-medium text-brand-ink tracking-wider leading-snug">
+              東方五行平衡觀點 × 現代芳香療法的細膩對話
+            </h2>
+            <p class="text-base text-brand-inkLight leading-relaxed font-light">
+              我們不以單一標準套用每個人，而是從「理解特質」到「感官陪伴」，建立連貫而完整的個人化照顧流程。
+            </p>
+
+            <div class="space-y-4 pt-2">
+              <div class="p-5 rounded-2xl bg-brand-white border border-brand-champagne/30">
+                <h3 class="font-serifTC text-base font-medium text-brand-ink">1. 東方五行觀點：作為自我理解的視角</h3>
+                <p class="text-sm text-brand-inkLight mt-1.5 leading-relaxed font-light">
+                  透過八字命局中的五行分佈與日主特質，梳理個人在面對壓力、關係與職涯選擇時的慣性與潛能，提供溫和且理性的思考座標。
+                </p>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-brand-white border border-brand-champagne/30">
+                <h3 class="font-serifTC text-base font-medium text-brand-ink">2. 現代芳香療法：嚴謹且貼合感官的香氣設計</h3>
+                <p class="text-sm text-brand-inkLight mt-1.5 leading-relaxed font-light">
+                  立基於美國 NAHA Level I、Level II 認證知識背景，重視精油使用安全與調性平衡，依照個案當下的氣味偏好與身心狀態進行調配。
+                </p>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-brand-white border border-brand-champagne/30">
+                <h3 class="font-serifTC text-base font-medium text-brand-ink">3. 從諮詢到日常香氣的延伸體驗</h3>
+                <p class="text-sm text-brand-inkLight mt-1.5 leading-relaxed font-light">
+                  讓一次性的深度對話或芳療放鬆，能透過個人化建議與隨身香膏延續至日常生活，在每次呼吸間重新找回安定。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 右側：中式芳療代表香氣層次互動探索器 -->
+          <div class="lg:col-span-6">
+            <div class="p-7 sm:p-10 rounded-3xl bg-brand-white border border-brand-champagne/40 shadow-editorial space-y-6">
+              <div class="flex items-center justify-between border-b border-brand-mistGray pb-4">
+                <div>
+                  <span class="font-displayEn text-xs uppercase tracking-[0.22em] text-brand-champagne">Botanical Olfactory Palette</span>
+                  <h3 class="font-serifTC text-xl font-medium text-brand-ink mt-1">中式芳療｜香氣調性與感官層次</h3>
+                </div>
+                <span class="text-xs text-brand-inkMuted">點擊切換香氣調性</span>
+              </div>
+
+              <!-- 調性切換按鈕 -->
+              <div class="grid grid-cols-2 gap-3" role="tablist" aria-label="香氣調性分類">
+                <button type="button"
+                        id="tab-wood"
+                        data-scent-tab="wood"
+                        role="tab"
+                        aria-selected="true"
+                        class="scent-tab-btn py-3 px-4 rounded-xl text-xs sm:text-sm tracking-wider font-medium bg-brand-ink text-brand-white transition-all text-left flex items-center justify-between">
+                  <span>沉穩木質與樹脂氣息</span>
+                  <span class="font-displayEn text-xs opacity-80">Grounding</span>
+                </button>
+                <button type="button"
+                        id="tab-floral"
+                        data-scent-tab="floral"
+                        role="tab"
+                        aria-selected="false"
+                        class="scent-tab-btn py-3 px-4 rounded-xl text-xs sm:text-sm tracking-wider font-medium bg-brand-warmWhite text-brand-inkLight border border-brand-champagne/35 hover:border-brand-sage transition-all text-left flex items-center justify-between">
+                  <span>細膩果香與花草層次</span>
+                  <span class="font-displayEn text-xs opacity-80">Uplifting</span>
+                </button>
+              </div>
+
+              <!-- 木質與樹脂調內容 -->
+              <div id="scent-panel-wood" class="space-y-4">
+                <p class="text-sm text-brand-inkLight leading-relaxed font-light">
+                  適合思緒繁雜、渴望安定沉澱的時刻。溫潤深邃的木質與樹脂香氣，能引導呼吸自然放緩，營造安定包覆的空間感：
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+                  <div class="p-4 rounded-2xl bg-brand-warmWhite border border-brand-champagne/30">
+                    <p class="font-displayEn text-xs uppercase tracking-widest text-brand-champagne">Sandalwood</p>
+                    <p class="font-serifTC text-base font-medium text-brand-ink mt-1">檀香</p>
+                    <p class="text-xs text-brand-inkLight mt-2 leading-relaxed">溫潤悠遠的木質底蘊，帶來靜謐安定的陪伴感。</p>
+                  </div>
+                  <div class="p-4 rounded-2xl bg-brand-warmWhite border border-brand-champagne/30">
+                    <p class="font-displayEn text-xs uppercase tracking-widest text-brand-champagne">Frankincense</p>
+                    <p class="font-serifTC text-base font-medium text-brand-ink mt-1">乳香</p>
+                    <p class="text-xs text-brand-inkLight mt-2 leading-relaxed">純淨沉穩的樹脂氣息，協助放慢呼吸、澄澈思緒。</p>
+                  </div>
+                  <div class="p-4 rounded-2xl bg-brand-warmWhite border border-brand-champagne/30">
+                    <p class="font-displayEn text-xs uppercase tracking-widest text-brand-champagne">Patchouli</p>
+                    <p class="font-serifTC text-base font-medium text-brand-ink mt-1">廣藿香</p>
+                    <p class="text-xs text-brand-inkLight mt-2 leading-relaxed">帶有大地氣息的深沉草本木質調，賦予踏實歸屬感。</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 花草與果香調內容 (預設隱藏) -->
+              <div id="scent-panel-floral" class="space-y-4 hidden">
+                <p class="text-sm text-brand-inkLight leading-relaxed font-light">
+                  適合緊繃疲憊、需要溫柔舒展的時刻。清亮果香與細膩草本花香交織，為日常注入輕盈流動的愉悅氣息：
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                  <div class="p-4 rounded-2xl bg-brand-warmWhite border border-brand-champagne/30">
+                    <p class="font-displayEn text-xs uppercase tracking-widest text-brand-sageDark">Bergamot</p>
+                    <p class="font-serifTC text-base font-medium text-brand-ink mt-1">佛手柑</p>
+                    <p class="text-xs text-brand-inkLight mt-2 leading-relaxed">清朗溫和的柑橘果香，如晨光般舒緩緊繃情緒，帶來清新呼吸感。</p>
+                  </div>
+                  <div class="p-4 rounded-2xl bg-brand-warmWhite border border-brand-champagne/30">
+                    <p class="font-displayEn text-xs uppercase tracking-widest text-brand-sageDark">Rose Geranium</p>
+                    <p class="font-serifTC text-base font-medium text-brand-ink mt-1">玫瑰天竺葵</p>
+                    <p class="text-xs text-brand-inkLight mt-2 leading-relaxed">揉合草本綠意與柔和玫瑰氣息，溫柔平衡感官，營造細膩呵護。</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-3 border-t border-brand-mistGray flex items-center justify-between text-xs text-brand-inkMuted">
+                <span>實際配方皆依當下狀態與個人氣味偏好專屬調配</span>
+                <span class="font-displayEn tracking-widest">NAHA Level I &amp; II</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 06. 體驗流程與香膏作品 Your Ritual & Ritual Objects -->
+    <section id="ritual-objects" class="py-24 lg:py-32 bg-brand-warmWhite border-t border-brand-champagne/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 space-y-24">
+        
+        <!-- 第一部分：四階段體驗流程 Your Ritual -->
+        <div class="reveal-item">
+          <div class="max-w-2xl">
+            <p class="font-displayEn text-xs sm:text-sm uppercase tracking-[0.28em] text-brand-sageDark">05 / Your Ritual Journey</p>
+            <h2 class="font-serifTC text-2xl sm:text-3xl lg:text-4xl font-medium text-brand-ink tracking-wider leading-snug mt-3">
+              從傾聽理解開始，將儀式感溫柔帶回日常。
+            </h2>
+          </div>
+
+          <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Step 1 -->
+            <div class="p-7 rounded-2xl bg-brand-white border border-brand-champagne/30 relative">
+              <span class="font-displayEn text-3xl font-light text-brand-champagne">01</span>
+              <h3 class="font-serifTC text-lg font-medium text-brand-ink mt-3">第一步：了解需求</h3>
+              <p class="text-sm text-brand-inkLight leading-relaxed mt-2 font-light">
+                在預約與初次交流中，細心傾聽您當下的生活狀態、想梳理的人生課題或身心放鬆需求。
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="p-7 rounded-2xl bg-brand-white border border-brand-champagne/30 relative">
+              <span class="font-displayEn text-3xl font-light text-brand-champagne">02</span>
+              <h3 class="font-serifTC text-lg font-medium text-brand-ink mt-3">第二步：專屬諮詢或芳療體驗</h3>
+              <p class="text-sm text-brand-inkLight leading-relaxed mt-2 font-light">
+                進行八字命盤結構解析，或以客製調配的精油進行淋巴按摩，在靜謐隱私的氛圍裡安頓身心。
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="p-7 rounded-2xl bg-brand-white border border-brand-champagne/30 relative">
+              <span class="font-displayEn text-3xl font-light text-brand-champagne">03</span>
+              <h3 class="font-serifTC text-lg font-medium text-brand-ink mt-3">第三步：個人化建議</h3>
+              <p class="text-sm text-brand-inkLight leading-relaxed mt-2 font-light">
+                根據命理特質或感官回饋，整理屬於您的行動參考方向、香氣配置與日常自我調養建議。
+              </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="p-7 rounded-2xl bg-brand-white border border-brand-champagne/30 relative">
+              <span class="font-displayEn text-3xl font-light text-brand-champagne">04</span>
+              <h3 class="font-serifTC text-lg font-medium text-brand-ink mt-3">第四步：將儀式延續至日常</h3>
+              <p class="text-sm text-brand-inkLight leading-relaxed mt-2 font-light">
+                透過 10g 隨身專屬香膏與呼吸練習，讓這份安定不隨諮詢結束而消散，成為隨時可開啟的日常陪伴。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 第二部分：香膏與品牌作品 Ritual Objects 特寫 -->
+        <div class="rounded-3xl bg-brand-white border border-brand-champagne/40 p-8 sm:p-12 lg:p-16 shadow-editorial reveal-item">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            
+            <!-- 器物視覺展示 (佔 5 欄) -->
+            <div class="lg:col-span-5">
+              <div class="relative rounded-2xl overflow-hidden border border-brand-champagne/35 bg-brand-mistGray aspect-square">
+                <!-- [圖片替換標註 - 10g 專屬香膏與金屬替換匣] 日後可替換為品牌香膏實品攝影 -->
+                <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85"
+                     onerror="this.onerror=null;this.src='https://placehold.co/800x800/F3F4F1/303631?text=10g+Bespoke+Balm';"
+                     alt="10g 個人專屬香膏與精緻金屬外殼意象特寫"
+                     class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-ink/45 via-transparent to-transparent"></div>
+                <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between text-brand-white">
+                  <span class="font-displayEn text-xs uppercase tracking-[0.24em]">Ritual Object · 10g Solid Balm</span>
+                  <span class="px-3 py-1 rounded-full bg-brand-ink/70 backdrop-blur-sm text-[11px] tracking-wider">客製洽詢</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 器物細節說明 (佔 7 欄) -->
+            <div class="lg:col-span-7 space-y-6">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-champagneLight/70 text-xs tracking-widest text-brand-ink">
+                <span>RITUAL OBJECTS · 香膏與品牌作品</span>
+              </div>
+
+              <h3 class="font-serifTC text-2xl sm:text-3xl font-medium text-brand-ink tracking-wider leading-snug">
+                10g 個人專屬香膏 × 精緻金屬替換匣
+              </h3>
+
+              <p class="text-base text-brand-inkLight leading-relaxed font-light">
+                真正具有意義的儀式，不必侷限在特定空間。我們將個人化的香氣設計，與溫潤適合的基底材料融合，手工調製成 <strong class="font-medium text-brand-ink">10g 隨身香膏</strong>，並搭配具有<strong class="font-medium text-brand-ink">彈簧按壓設計的精緻金屬替換匣</strong>。
+              </p>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                <div class="p-4 rounded-xl bg-brand-warmWhite border border-brand-champagne/25">
+                  <p class="font-serifTC text-sm font-medium text-brand-ink">10g 隨身規格</p>
+                  <p class="text-xs text-brand-inkLight mt-1 leading-relaxed">輕巧貼合掌心與隨身包袋，隨時隨地皆可從容取用。</p>
+                </div>
+                <div class="p-4 rounded-xl bg-brand-warmWhite border border-brand-champagne/25">
+                  <p class="font-serifTC text-sm font-medium text-brand-ink">彈簧按壓金屬替換匣</p>
+                  <p class="text-xs text-brand-inkLight mt-1 leading-relaxed">細膩金屬工藝手感，支援替換內芯，兼顧質感與永續陪伴。</p>
+                </div>
+                <div class="p-4 rounded-xl bg-brand-warmWhite border border-brand-champagne/25">
+                  <p class="font-serifTC text-sm font-medium text-brand-ink">日常呼吸儀式</p>
+                  <p class="text-xs text-brand-inkLight mt-1 leading-relaxed">於手腕或指尖輕抹香氣、緩慢深呼吸，為繁忙日常按下暫停鍵。</p>
+                </div>
+              </div>
+
+              <!-- 嚴守規範：不虛構價格或宣稱現貨，標示為預約洽詢 -->
+              <div class="p-4 rounded-xl bg-brand-mistGray/80 border border-brand-champagne/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <p class="text-xs text-brand-inkLight leading-relaxed">
+                  <strong class="font-medium text-brand-ink">訂製與洽詢說明：</strong>個人專屬香膏皆依個別諮詢與氣味需求調製。詳細訂製方式、製作週期與費用資訊，請透過預約連結洽詢（待補充正式產品販售資訊）。
+                </p>
+                <a href="https://calendar.app.google/j2qQkH8wEM1AddJX7"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="ritual-cta-btn shrink-0 px-6 py-3 rounded-full text-xs tracking-[0.16em] font-medium text-center">
+                  預約調香洽詢 →
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 07. 顧客回饋 Testimonials（嚴格遵守不捏造評價規範，以「待補充真實顧客回饋」設計佔位區呈現） -->
+    <section id="testimonials" class="py-24 lg:py-32 bg-brand-white border-t border-brand-champagne/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        
+        <div class="max-w-3xl mx-auto text-center space-y-4 reveal-item">
+          <p class="font-displayEn text-xs sm:text-sm uppercase tracking-[0.28em] text-brand-sageDark">06 / Client Reflections</p>
+          <h2 class="font-serifTC text-2xl sm:text-3xl lg:text-4xl font-medium text-brand-ink tracking-wider">
+            真實陪伴的印記｜顧客回饋專區
+          </h2>
+          <p class="text-base text-brand-inkLight leading-relaxed font-light">
+            在三年的專業從業歷程中，江汶叡已親自陪伴並服務超過五十位個案。我們高度重視每位客戶的隱私與真實感受，絕不採用虛構評價；以下版位將陸續收錄經客戶正式授權後之真實體驗紀錄。
+          </p>
+        </div>
+
+        <!-- 待補充真實顧客回饋 3 欄設計佔位卡片 -->
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-7 reveal-item">
+          
+          <!-- 佔位卡 1：八字命理諮詢 -->
+          <div class="p-7 rounded-2xl bg-brand-warmWhite border border-dashed border-brand-champagne/70 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="px-3 py-1 rounded-full bg-brand-champagneLight/70 text-[11px] tracking-wider text-brand-ink">
+                  待補充真實顧客回饋 · 01
+                </span>
+                <span class="font-displayEn text-xs tracking-widest text-brand-inkMuted">Bazi Consultation</span>
+              </div>
+              <p class="font-serifTC text-base text-brand-ink font-medium">
+                【八字命理諮詢｜真實個案回饋預留區】
+              </p>
+              <p class="text-sm text-brand-inkMuted leading-relaxed font-light">
+                此版位預留予實際體驗過「八字命理諮詢」並同意授權分享之客戶心得。將呈現個案在梳理自身特質與人生轉折課題後的真實感受。
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-brand-mistGray flex items-center justify-between text-xs text-brand-inkMuted">
+              <span>顧客稱謂（待授權補充）</span>
+              <span>體驗項目：八字命理諮詢</span>
+            </div>
+          </div>
+
+          <!-- 佔位卡 2：芳療精油淋巴按摩 -->
+          <div class="p-7 rounded-2xl bg-brand-warmWhite border border-dashed border-brand-champagne/70 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="px-3 py-1 rounded-full bg-brand-sageLight text-[11px] tracking-wider text-brand-ink">
+                  待補充真實顧客回饋 · 02
+                </span>
+                <span class="font-displayEn text-xs tracking-widest text-brand-inkMuted">Aromatherapy</span>
+              </div>
+              <p class="font-serifTC text-base text-brand-ink font-medium">
+                【芳療精油淋巴按摩｜真實個案回饋預留區】
+              </p>
+              <p class="text-sm text-brand-inkMuted leading-relaxed font-light">
+                此版位預留予實際體驗過「芳療精油淋巴按摩」並同意授權分享之客戶心得。將呈現個案對於中式芳療香氣設計與身心放鬆空間的真實體驗。
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-brand-mistGray flex items-center justify-between text-xs text-brand-inkMuted">
+              <span>顧客稱謂（待授權補充）</span>
+              <span>體驗項目：芳療精油淋巴按摩</span>
+            </div>
+          </div>
+
+          <!-- 佔位卡 3：個人專屬香膏 -->
+          <div class="p-7 rounded-2xl bg-brand-warmWhite border border-dashed border-brand-champagne/70 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="px-3 py-1 rounded-full bg-brand-champagneLight/70 text-[11px] tracking-wider text-brand-ink">
+                  待補充真實顧客回饋 · 03
+                </span>
+                <span class="font-displayEn text-xs tracking-widest text-brand-inkMuted">Bespoke Balm</span>
+              </div>
+              <p class="font-serifTC text-base text-brand-ink font-medium">
+                【個人專屬香膏｜真實個案回饋預留區】
+              </p>
+              <p class="text-sm text-brand-inkMuted leading-relaxed font-light">
+                此版位預留予實際訂製「10g 個人專屬香膏」並同意授權分享之客戶心得。將記錄隨身香氣如何融入日常，成為自我照顧儀式的真實故事。
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-brand-mistGray flex items-center justify-between text-xs text-brand-inkMuted">
+              <span>顧客稱謂（待授權補充）</span>
+              <span>體驗項目：個人專屬香膏</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 08. 常見問題 FAQ -->
+    <section id="faq" class="py-24 lg:py-32 bg-brand-warmWhite border-t border-brand-champagne/20">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-10">
+        
+        <div class="text-center space-y-3 reveal-item">
+          <p class="font-displayEn text-xs sm:text-sm uppercase tracking-[0.28em] text-brand-sageDark">07 / Frequently Asked Questions</p>
+          <h2 class="font-serifTC text-2xl sm:text-3xl lg:text-4xl font-medium text-brand-ink tracking-wider">
+            常見問題與預約須知
+          </h2>
+          <p class="text-sm sm:text-base text-brand-inkLight font-light">
+            在開啟專屬旅程前，為您整理關於服務選擇、預約流程與安全須知的常見疑問。
+          </p>
+        </div>
+
+        <div class="mt-12 space-y-4 reveal-item" id="faq-accordion">
+          
+          <!-- Q1：服務如何選擇 -->
+          <div class="rounded-2xl bg-brand-white border border-brand-champagne/35 overflow-hidden">
+            <button type="button"
+                    class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none"
+                    aria-expanded="true">
+              <span class="font-serifTC text-base sm:text-lg font-medium text-brand-ink">
+                Q1. 八字命理諮詢、芳療精油淋巴按摩與個人專屬香膏，我該如何選擇？
+              </span>
+              <span class="faq-icon w-7 h-7 rounded-full bg-brand-warmWhite border border-brand-champagne/40 flex items-center justify-center shrink-0 text-brand-ink transition-transform rotate-45">
+                +
+              </span>
+            </button>
+            <div class="faq-content px-6 pb-6 text-sm sm:text-base text-brand-inkLight leading-relaxed font-light border-t border-brand-mistGray pt-4">
+              您可以依據當下最迫切的需求來選擇：若正處於工作、感情或人生轉折點，希望更理解自身特質與方向，建議從<strong class="font-medium text-brand-ink">「八字命理諮詢」</strong>開始；若近期感到生活高壓疲憊，渴望透過香氣與觸感獲得喘息空間，適合選擇<strong class="font-medium text-brand-ink">「芳療精油淋巴按摩」</strong>；若希望能有一款隨身香氣陪伴日常呼吸與自我照顧，則可洽詢<strong class="font-medium text-brand-ink">「個人專屬香膏」</strong>。您亦可於預約時備註當下狀態，由創辦人為您評估合適的體驗組合。
+            </div>
+          </div>
+
+          <!-- Q2：預約與服務流程 -->
+          <div class="rounded-2xl bg-brand-white border border-brand-champagne/35 overflow-hidden">
+            <button type="button"
+                    class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none"
+                    aria-expanded="false">
+              <span class="font-serifTC text-base sm:text-lg font-medium text-brand-ink">
+                Q2. 請問預約與服務的完整流程為何？
+              </span>
+              <span class="faq-icon w-7 h-7 rounded-full bg-brand-warmWhite border border-brand-champagne/40 flex items-center justify-center shrink-0 text-brand-ink transition-transform">
+                +
+              </span>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 text-sm sm:text-base text-brand-inkLight leading-relaxed font-light border-t border-brand-mistGray pt-4">
+              請點擊網站中的「預約專屬體驗」按鈕，前往官方指定的 Google Calendar 預約頁面選擇合適的時段，並填寫基本聯絡資訊與感興趣的服務項目。完成預約後，我們將與您確認初步需求與注意事項，確保為您預留完整、隱私且安定的專屬時光。
+            </div>
+          </div>
+
+          <!-- Q3：芳療注意事項 -->
+          <div class="rounded-2xl bg-brand-white border border-brand-champagne/35 overflow-hidden">
+            <button type="button"
+                    class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none"
+                    aria-expanded="false">
+              <span class="font-serifTC text-base sm:text-lg font-medium text-brand-ink">
+                Q3. 進行芳療精油淋巴按摩或使用專屬香膏前，有哪些安全注意事項？
+              </span>
+              <span class="faq-icon w-7 h-7 rounded-full bg-brand-warmWhite border border-brand-champagne/40 flex items-center justify-center shrink-0 text-brand-ink transition-transform">
+                +
+              </span>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 text-sm sm:text-base text-brand-inkLight leading-relaxed font-light border-t border-brand-mistGray pt-4">
+              創辦人具備美國國家整體芳療協會（NAHA）Level I、Level II 課程相關認證背景，十分重視精油使用的安全性與個別評估。若您目前處於孕期、哺乳期、具有特定植物或精油過敏史、皮膚敏感或重大特殊健康狀況，請務必於預約與諮詢前主動告知。此外，本品牌之芳療與中式五行平衡理念屬於感官放鬆與生活自我照顧，不具醫療診斷或疾病治療效力。
+            </div>
+          </div>
+
+          <!-- Q4：八字諮詢須知 -->
+          <div class="rounded-2xl bg-brand-white border border-brand-champagne/35 overflow-hidden">
+            <button type="button"
+                    class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none"
+                    aria-expanded="false">
+              <span class="font-serifTC text-base sm:text-lg font-medium text-brand-ink">
+                Q4. 預約八字命理諮詢需要準備什麼資料？會不會帶有宿命論或恐嚇感？
+              </span>
+              <span class="faq-icon w-7 h-7 rounded-full bg-brand-warmWhite border border-brand-champagne/40 flex items-center justify-center shrink-0 text-brand-ink transition-transform">
+                +
+              </span>
+            </button>
+            <div class="faq-content hidden px-6 pb-6 text-sm sm:text-base text-brand-inkLight leading-relaxed font-light border-t border-brand-mistGray pt-4">
+              預約八字命理諮詢時，建議準備您的正確出生年、月、日與出生時間（若不確定詳細出生時辰，亦可事先告知討論）。請完全放心，「JR 旅程儀式」不營造迷信、恐懼或鐵口直斷的氛圍；我們將八字視為理解自身特質、優勢與思考人生課題的參考工具，陪伴您獲得更多整理思緒與選擇下一步的空間。
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 09. 預約與聯絡 Booking Section -->
+    <section id="booking" class="py-24 lg:py-32 bg-brand-white border-t border-brand-champagne/25 relative overflow-hidden">
+      <div class="absolute inset-0 subtle-grid-bg opacity-60 pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="rounded-[2.25rem] bg-brand-warmWhite border border-brand-champagne/50 p-8 sm:p-14 lg:p-16 text-center shadow-editorial space-y-8 reveal-item ritual-cta-wrapper">
+          
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-white border border-brand-champagne/40">
+            <span class="font-displayEn text-xs uppercase tracking-[0.24em] text-brand-sageDark">Begin Your Journey Ritual</span>
+          </div>
+
+          <h2 class="font-serifTC text-2xl sm:text-4xl font-medium text-brand-ink tracking-wider leading-snug">
+            「每一段旅程，都值得為自己留下片刻。」
+          </h2>
+
+          <p class="text-base sm:text-lg text-brand-inkLight leading-relaxed font-light max-w-2xl mx-auto">
+            無論您正站在人生選擇的路口希望梳理方向，或是想在繁忙日常裡透過香氣與觸感找回身心的平衡，誠摯邀請您預約一段專屬於自己的安棲時光。
+          </p>
+
+          <!-- 主要預約 CTA 與裝飾性微互動 -->
+          <div class="pt-2 flex flex-col items-center justify-center gap-4">
+            <a href="https://calendar.app.google/j2qQkH8wEM1AddJX7"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="ritual-cta-btn px-10 py-4.5 sm:py-5 rounded-full text-base sm:text-lg tracking-[0.2em] font-medium inline-flex items-center gap-3.5">
+              <span>開啟專屬體驗</span>
+              <svg class="w-5 h-5 text-brand-sageDark" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+
+            <!-- Status: Ready to Connect 裝飾性微互動提示 -->
+            <div class="status-badge-micro inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-brand-white border border-brand-sage/40">
+              <span class="w-2 h-2 rounded-full bg-brand-mintGreen"></span>
+              <span class="font-monoEn text-xs tracking-wider text-brand-inkLight">Status: Ready to Connect</span>
+              <span class="text-brand-champagne">|</span>
+              <span class="text-xs text-brand-inkMuted">前往 Google Calendar 預約時段</span>
+            </div>
+          </div>
+
+          <!-- 聯絡與社群資訊說明 -->
+          <div class="pt-8 border-t border-brand-champagne/25 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
+            <div class="p-4 rounded-2xl bg-brand-white/80 border border-brand-champagne/25">
+              <p class="font-displayEn text-xs uppercase tracking-widest text-brand-champagne">Founder &amp; Practitioner</p>
+              <p class="font-serifTC text-sm font-medium text-brand-ink mt-1">江汶叡｜JR 旅程儀式創辦人</p>
+              <p class="text-xs text-brand-inkMuted mt-1">NAHA Level I、Level II 認證背景</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-brand-white/80 border border-brand-champagne/25">
+              <p class="font-displayEn text-xs uppercase tracking-widest text-brand-sageDark">Reservation</p>
+              <p class="font-serifTC text-sm font-medium text-brand-ink mt-1">全預約制個人化服務</p>
+              <p class="text-xs text-brand-inkMuted mt-1">透過 Google Calendar 線上預約專屬時段</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-brand-white/80 border border-brand-champagne/25">
+              <p class="font-displayEn text-xs uppercase tracking-widest text-brand-champagne">Social &amp; Contact</p>
+              <p class="font-serifTC text-sm font-medium text-brand-ink mt-1">官方社群與聯絡信箱</p>
+              <p class="text-xs text-brand-inkMuted mt-1">待補充官方社群帳號與聯絡信箱資訊</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 09. 核心產品與技術解決方案 -->
+    <!-- Contact Me: 社群與需求表單 -->
+    <section id="contact" class="py-20 lg:py-24 bg-brand-warmWhite border-t border-brand-champagne/25 relative overflow-hidden">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          <div class="lg:col-span-7 reveal-item">
+            <p class="font-displayEn text-xs uppercase tracking-[0.24em] text-brand-champagne">Contact Me</p>
+            <h2 class="font-serifTC text-3xl sm:text-4xl font-medium tracking-[0.08em] text-brand-ink mt-3">聯絡我</h2>
+            <p class="text-brand-inkLight leading-relaxed mt-5 max-w-2xl font-light">歡迎透過社群與我保持聯繫，也可以填寫需求表單，讓我更了解您的想法與合作需求。</p>
+            <div class="flex flex-wrap items-center gap-3 mt-8" aria-label="社群連結">
+              <a href="https://line.me/ti/p/vPVZKkFdqY" target="_blank" rel="noopener noreferrer" aria-label="LINE" class="w-12 h-12 rounded-full bg-brand-sageLight text-brand-sageDark flex items-center justify-center text-xl hover:bg-brand-sage hover:text-brand-white transition-colors"><i class="fa-brands fa-line" aria-hidden="true"></i></a>
+              <span aria-label="Facebook" title="Facebook 連結待補充" class="w-12 h-12 rounded-full bg-brand-champagneLight text-brand-champagne flex items-center justify-center text-xl"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></span>
+              <span aria-label="LinkedIn" title="LinkedIn 連結待補充" class="w-12 h-12 rounded-full bg-brand-champagneLight text-brand-champagne flex items-center justify-center text-xl"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></span>
+              <span aria-label="GitHub" title="GitHub 連結待補充" class="w-12 h-12 rounded-full bg-brand-champagneLight text-brand-champagne flex items-center justify-center text-xl"><i class="fa-brands fa-github" aria-hidden="true"></i></span>
+            </div>
+          </div>
+          <div class="lg:col-span-5 reveal-item">
+            <div class="rounded-3xl bg-brand-white border border-brand-champagne/30 p-7 sm:p-8 shadow-editorial">
+              <div class="w-12 h-12 rounded-2xl bg-brand-sageLight text-brand-sageDark flex items-center justify-center text-xl" aria-hidden="true"><i class="fa-regular fa-clipboard"></i></div>
+              <h3 class="font-serifTC text-xl font-medium text-brand-ink mt-5">填寫需求表單</h3>
+              <p class="text-sm text-brand-inkLight leading-relaxed mt-3">請留下您的需求與聯絡方式，我會在收到後與您進一步聯繫。</p>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSf4tghapny7aXWaxUGmMD4QW1zS7cYFjHerZOSEO6VSGtoT1Q/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="ritual-cta-btn mt-6 w-full px-6 py-3.5 rounded-full text-sm tracking-[0.15em] font-medium inline-flex items-center justify-center gap-3"><span>開啟需求表單</span><i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solutions" class="py-24 lg:py-32 bg-brand-mistGray border-t border-brand-champagne/25 relative overflow-hidden">
+      <div class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-brand-sage/10 blur-3xl pointer-events-none" aria-hidden="true"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="max-w-2xl mb-12 lg:mb-16 reveal-item">
+          <p class="font-displayEn text-xs uppercase tracking-[0.24em] text-brand-champagne">Core Products &amp; Solutions</p>
+          <h2 class="font-serifTC text-3xl sm:text-4xl font-medium tracking-[0.08em] text-brand-ink mt-3">核心產品與技術解決方案</h2>
+          <p class="text-brand-inkLight leading-relaxed mt-5 font-light">以創意、專業與科技，探索身心照護與數位生活的更多可能。</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <article class="service-card reveal-item rounded-3xl bg-brand-white border border-brand-champagne/25 p-7 lg:p-8 shadow-editorial">
+            <div class="w-14 h-14 rounded-2xl bg-brand-champagneLight text-brand-champagne flex items-center justify-center text-2xl" aria-hidden="true"><i class="fa-solid fa-yin-yang"></i></div>
+            <p class="font-displayEn text-xs uppercase tracking-[0.2em] text-brand-champagne mt-7">01 · Insight</p>
+            <h3 class="font-serifTC text-xl font-medium text-brand-ink mt-2">八字占卜</h3>
+            <p class="text-sm text-brand-inkLight leading-relaxed mt-4">訂閱Vibe Coding行銷數據分析學習圈，跟著我們一同走入行銷數據分析與vibe coding自動化的世界</p>
+          </article>
+
+          <article class="service-card reveal-item rounded-3xl bg-brand-white border border-brand-sage/30 p-7 lg:p-8 shadow-editorial">
+            <div class="w-14 h-14 rounded-2xl bg-brand-sageLight text-brand-sageDark flex items-center justify-center text-2xl" aria-hidden="true"><i class="fa-solid fa-flask"></i></div>
+            <p class="font-displayEn text-xs uppercase tracking-[0.2em] text-brand-sageDark mt-7">02 · Formulation</p>
+            <h3 class="font-serifTC text-xl font-medium text-brand-ink mt-2">調製香膏</h3>
+            <p class="text-sm text-brand-inkLight leading-relaxed mt-4">從經驗、法條到正確說明，奇點讓每位保險專業者擁有一位懂法的科技夥伴。</p>
+          </article>
+
+          <article class="service-card reveal-item rounded-3xl bg-brand-white border border-brand-champagne/25 p-7 lg:p-8 shadow-editorial">
+            <div class="w-14 h-14 rounded-2xl bg-brand-champagneLight text-brand-champagne flex items-center justify-center text-2xl" aria-hidden="true"><i class="fa-solid fa-hands"></i></div>
+            <p class="font-displayEn text-xs uppercase tracking-[0.2em] text-brand-champagne mt-7">03 · Wellness Tech</p>
+            <h3 class="font-serifTC text-xl font-medium text-brand-ink mt-2">芳療淋巴按摩</h3>
+            <p class="text-sm text-brand-inkLight leading-relaxed mt-4">使用 LangChain 搭建的 RAG 系統，可上傳 PDF 並進行精準問答。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 10. 頁尾 Footer -->
+  <footer class="bg-brand-ink text-brand-warmWhite py-16 border-t border-brand-champagne/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-brand-warmWhite/15">
+        
+        <!-- 品牌識別與核心主張 -->
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center gap-3.5">
+            <div class="w-10 h-10 rounded-full border border-brand-champagne flex items-center justify-center bg-brand-warmWhite/10">
+              <span class="font-displayEn text-xl font-semibold tracking-wider text-brand-champagneLight">JR</span>
+            </div>
+            <div>
+              <p class="font-serifTC text-lg font-medium tracking-[0.18em] text-brand-white">JR 旅程儀式</p>
+              <p class="font-displayEn text-xs tracking-[0.25em] uppercase text-brand-champagne">Journey Ritual</p>
+            </div>
+          </div>
+          <p class="text-sm text-brand-warmWhite/75 leading-relaxed font-light max-w-sm">
+            東方命理智慧 × 現代芳香療法 × 個人專屬儀式。<br />
+            在喧囂中，為靈魂預留一處安棲之所。
+          </p>
+        </div>
+
+        <!-- 快速導覽 -->
+        <div class="md:col-span-4 space-y-3">
+          <p class="font-displayEn text-xs uppercase tracking-[0.24em] text-brand-champagne">Navigation</p>
+          <ul class="grid grid-cols-2 gap-2 text-sm text-brand-warmWhite/80 font-light">
+            <li><a href="#hero" class="hover:text-brand-champagneLight transition-colors">首頁頂部</a></li>
+            <li><a href="#philosophy" class="hover:text-brand-champagneLight transition-colors">品牌理念</a></li>
+            <li><a href="#founder" class="hover:text-brand-champagneLight transition-colors">關於創辦人</a></li>
+            <li><a href="#services" class="hover:text-brand-champagneLight transition-colors">專屬服務</a></li>
+            <li><a href="#approach" class="hover:text-brand-champagneLight transition-colors">中式芳療</a></li>
+            <li><a href="#ritual-objects" class="hover:text-brand-champagneLight transition-colors">體驗與香膏</a></li>
+            <li><a href="#testimonials" class="hover:text-brand-champagneLight transition-colors">顧客回饋</a></li>
+            <li><a href="#faq" class="hover:text-brand-champagneLight transition-colors">常見問題</a></li>
+          </ul>
+        </div>
+
+        <!-- 預約入口 -->
+        <div class="md:col-span-3 space-y-4">
+          <p class="font-displayEn text-xs uppercase tracking-[0.24em] text-brand-champagne">Reservation</p>
+          <p class="text-xs text-brand-warmWhite/75 leading-relaxed font-light">
+            採預約制一對一專屬服務，點擊下方按鈕開啟 Google Calendar 預約頁面：
+          </p>
+          <a href="https://calendar.app.google/j2qQkH8wEM1AddJX7"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="inline-flex items-center justify-center gap-2 w-full py-3 px-5 rounded-full bg-brand-warmWhite text-brand-ink text-xs tracking-[0.16em] font-medium hover:bg-brand-champagneLight transition-colors">
+            <span>預約專屬體驗</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- 版權與必要聲明 -->
+      <div class="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-brand-warmWhite/60 font-light">
+        <p>© <span id="current-year">2026</span> JR 旅程儀式 Journey Ritual（創辦人：江汶叡）. All rights reserved.</p>
+        <p class="max-w-xl leading-relaxed">
+          聲明：本網站所載之八字命理諮詢、中式芳療五行平衡觀點、精油淋巴按摩與個人專屬香膏，皆屬個人自我理解參考、感官放鬆與生活美學體驗，非屬醫療行為，亦不具任何醫學診斷或治療宣稱。
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 服務詳情互動彈窗 Modal（點擊「了解命理諮詢 / 了解芳療體驗 / 探索專屬香膏」時開啟） -->
+  <div id="service-detail-modal"
+       class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-brand-ink/60 backdrop-blur-sm"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="modal-service-title">
+    <div class="relative w-full max-w-xl rounded-3xl bg-brand-warmWhite border border-brand-champagne/50 p-7 sm:p-9 shadow-editorial max-h-[90vh] overflow-y-auto">
+      <button type="button"
+              id="close-modal-btn"
+              class="absolute top-5 right-5 w-9 h-9 rounded-full bg-brand-white border border-brand-champagne/40 flex items-center justify-center text-brand-ink hover:border-brand-sage transition-colors"
+              aria-label="關閉視窗">
+        ✕
+      </button>
+
+      <span id="modal-service-tag" class="font-displayEn text-xs uppercase tracking-[0.24em] text-brand-sageDark">Service Detail</span>
+      <h3 id="modal-service-title" class="font-serifTC text-2xl font-medium text-brand-ink mt-2">服務名稱</h3>
+      <p id="modal-service-subtitle" class="text-xs tracking-wider text-brand-champagne mt-1"></p>
+
+      <div id="modal-service-body" class="mt-5 space-y-4 text-sm sm:text-base text-brand-inkLight leading-relaxed font-light border-t border-brand-champagne/25 pt-5">
+      </div>
+
+      <div class="mt-7 pt-5 border-t border-brand-champagne/25 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <span class="font-monoEn text-xs text-brand-inkMuted flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-brand-mintGreen"></span>
+          Status: Ready to Connect
+        </span>
+        <a href="https://calendar.app.google/j2qQkH8wEM1AddJX7"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="ritual-cta-btn w-full sm:w-auto px-7 py-3 rounded-full text-xs tracking-[0.18em] font-medium text-center">
+          前往 Google Calendar 預約 →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /**
+     * JR 旅程儀式 (Journey Ritual) 集中式品牌與服務資料管理
+     * 方便日後直接維護文案、圖片與預約連結
+     */
+    const BRAND_CONFIG = {
+      bookingUrl: 'https://calendar.app.google/j2qQkH8wEM1AddJX7',
+      heroHeadline: '「在喧囂中，為靈魂預留一處安棲之所。」',
+      servicesDetail: {
+        bazi: {
+          tag: 'Service 01 · Bazi Consultation',
+          title: '八字命理諮詢',
+          subtitle: '定位：看見自身特質，梳理人生方向。',
+          paragraphs: [
+            '八字不只是傳統命理中的推演工具，也可以作為理解個人特質、思考人生課題的參考。',
+            '透過命局五行、日主特質與整體命盤結構的解析，協助客戶整理自身的優勢、需要留意的課題與可能的選擇方向。重點不在於替人生下定論，而是讓客戶獲得更多理解自己與思考下一步的空間。'
+          ],
+          highlights: [
+            '適合對象：正處於工作、感情或人生選擇轉折點，希望更理解自己的人。',
+            '諮詢核心：命局五行結構、日主特質探索、當下課題梳理與方向參考。',
+            '品牌原則：不營造迷信或宿命恐懼，提供溫暖、理性的自我對話空間。'
+          ]
+        },
+        aroma: {
+          tag: 'Service 02 · Botanical Lymphatic Massage',
+          title: '芳療精油淋巴按摩',
+          subtitle: '定位：透過香氣與觸感，為身心保留放鬆的空間。',
+          paragraphs: [
+            '以個人需求為出發點，考量精油的香氣特性、搭配關係與適當的使用方式，設計專屬的芳療按摩體驗。',
+            '運用檀香、乳香與廣藿香的沉穩氣息，或佛手柑、玫瑰天竺葵與其他適合的香氣層次，營造細膩而舒適的感官體驗。讓忙碌的日常有機會慢下來，透過呼吸、香氣與適當的按摩手法，重新感受身體與當下。'
+          ],
+          highlights: [
+            '適合對象：工作忙碌、容易感到疲憊，希望獲得放鬆與喘息空間的人。',
+            '香氣設計：結合中式芳療平衡觀點與美國 NAHA Level I、Level II 專業知識背景。',
+            '感官體驗：重視空間氛圍、隱私與個別需求評估的專屬放鬆時刻。'
+          ]
+        },
+        balm: {
+          tag: 'Service 03 · Bespoke Solid Perfume Balm',
+          title: '個人專屬香膏（10g 隨身金屬替換匣）',
+          subtitle: '定位：將專屬香氣帶進日常，延續生活儀式。',
+          paragraphs: [
+            '真正具有意義的儀式，不必侷限在特定空間。透過個人化的香氣設計，將精油與適合的基底材料調製成 10g 隨身香膏，搭配具有彈簧按壓設計的精緻金屬替換匣。',
+            '從包裝質感、香氣層次到日常使用情境，讓香膏成為可以隨身攜帶的生活配件。當想要稍作停留時，透過塗抹香膏與緩慢呼吸，建立屬於自己的日常儀式。'
+          ],
+          highlights: [
+            '作品規格：10g 隨身香膏，搭配彈簧按壓設計之精緻金屬替換匣。',
+            '使用情境：日常工作轉換心情、睡前靜心呼吸、隨身儀式感配件。',
+            '洽詢說明：採個人化客製調配，詳細訂製方式請透過預約連結洽詢（待補充正式販售資訊）。'
+          ]
+        }
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* 1. 更新頁尾年份 */
+      const yearEl = document.getElementById('current-year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      /* 2. 首頁主標題優雅打字機效果 */
+      const typewriterEl = document.getElementById('hero-typewriter');
+      const cursorEl = document.getElementById('hero-cursor');
+      const fullText = BRAND_CONFIG.heroHeadline;
+
+      if (typewriterEl) {
+        if (prefersReducedMotion) {
+          typewriterEl.textContent = fullText;
+          if (cursorEl) cursorEl.style.display = 'none';
+        } else {
+          typewriterEl.textContent = '';
+          let charIndex = 0;
+
+          const typeNextChar = () => {
+            if (charIndex < fullText.length) {
+              typewriterEl.textContent += fullText.charAt(charIndex);
+              charIndex++;
+              // 標點符號後稍微停頓，創造自然溫柔的閱讀節奏
+              const prevChar = fullText.charAt(charIndex - 1);
+              const delay = (prevChar === '，' || prevChar === '。') ? 260 : 95;
+              setTimeout(typeNextChar, delay);
+            } else if (cursorEl) {
+              // 完成後停留片刻並柔和淡出游標
+              setTimeout(() => {
+                cursorEl.style.transition = 'opacity 1.2s ease';
+                cursorEl.style.opacity = '0.25';
+              }, 2800);
+            }
+          };
+
+          setTimeout(typeNextChar, 350);
+        }
+      }
+
+      /* 3. 手機版導覽選單開關控制 */
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const iconOpen = document.getElementById('menu-icon-open');
+      const iconClose = document.getElementById('menu-icon-close');
+
+      const closeMobileMenu = () => {
+        if (!mobileMenu || !mobileMenuBtn) return;
+        mobileMenu.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      };
+
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+          const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+          if (isExpanded) {
+            closeMobileMenu();
+          } else {
+            mobileMenu.classList.remove('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            iconOpen.classList.add('hidden');
+            iconClose.classList.remove('hidden');
+          }
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+          link.addEventListener('click', closeMobileMenu);
+        });
+      }
+
+      /* 4. 導覽列滾動背景透明度與目前瀏覽區塊高亮 (Scroll Spy) */
+      const siteHeader = document.getElementById('site-header');
+      const navLinks = document.querySelectorAll('.nav-item');
+      const sections = document.querySelectorAll('main section[id]');
+
+      const handleScroll = () => {
+        if (siteHeader) {
+          if (window.scrollY > 30) {
+            siteHeader.classList.add('shadow-sm', 'bg-brand-warmWhite/95');
+            siteHeader.classList.remove('bg-brand-warmWhite/85');
+          } else {
+            siteHeader.classList.remove('shadow-sm', 'bg-brand-warmWhite/95');
+            siteHeader.classList.add('bg-brand-warmWhite/85');
+          }
+        }
+
+        let currentSectionId = '';
+        const scrollPosition = window.scrollY + 180;
+
+        sections.forEach(sec => {
+          if (scrollPosition >= sec.offsetTop && scrollPosition < sec.offsetTop + sec.offsetHeight) {
+            currentSectionId = sec.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          const target = link.getAttribute('data-nav-link');
+          if (target === currentSectionId) {
+            link.classList.add('text-brand-ink', 'border-brand-champagne', 'font-medium');
+            link.classList.remove('text-brand-inkLight', 'border-transparent');
+          } else {
+            link.classList.remove('text-brand-ink', 'border-brand-champagne', 'font-medium');
+            link.classList.add('text-brand-inkLight', 'border-transparent');
+          }
+        });
+      };
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll();
+
+      /* 5. 區塊進入視窗淡入動畫 (IntersectionObserver) */
+      const revealItems = document.querySelectorAll('.reveal-item');
+      if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+        revealItems.forEach(el => el.classList.add('is-visible'));
+      } else {
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        revealItems.forEach(el => observer.observe(el));
+      }
+
+      /* 6. 當下狀態覺察引導篩選互動 */
+      const filterBtns = document.querySelectorAll('.state-filter-btn');
+      const recMsg = document.getElementById('state-recommendation-msg');
+      const cardsMap = {
+        bazi: document.getElementById('service-card-bazi'),
+        aroma: document.getElementById('service-card-aroma'),
+        balm: document.getElementById('service-card-balm')
+      };
+
+      const stateMessages = {
+        bazi: '✦ 推薦您優先探索「八字命理諮詢」：透過命局五行與日主特質解析，為當下的人生轉折梳理清晰方向。',
+        aroma: '✦ 推薦您優先探索「芳療精油淋巴按摩」：以檀香、乳香或佛手柑等專屬香氣與溫和手法，為疲憊身心保留喘息空間。',
+        balm: '✦ 推薦您優先探索「個人專屬香膏」：將客製調配的 10g 隨身香膏帶進日常，隨時透過呼吸找回安定節奏。'
+      };
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const state = btn.getAttribute('data-filter-state');
+
+          filterBtns.forEach(b => {
+            b.classList.remove('bg-brand-ink', 'text-brand-white');
+            b.classList.add('bg-brand-white', 'text-brand-inkLight');
+          });
+          btn.classList.add('bg-brand-ink', 'text-brand-white');
+          btn.classList.remove('bg-brand-white', 'text-brand-inkLight');
+
+          Object.keys(cardsMap).forEach(key => {
+            const card = cardsMap[key];
+            if (!card) return;
+            if (state === 'all' || state === key) {
+              card.style.opacity = '1';
+              card.style.transform = state === key ? 'translateY(-6px)' : '';
+              card.classList.toggle('ring-2', state === key);
+              card.classList.toggle('ring-brand-sage', state === key);
+            } else {
+              card.style.opacity = '0.42';
+              card.style.transform = 'scale(0.98)';
+              card.classList.remove('ring-2', 'ring-brand-sage');
+            }
+          });
+
+          if (recMsg) {
+            if (state === 'all') {
+              recMsg.classList.add('hidden');
+            } else {
+              recMsg.textContent = stateMessages[state] || '';
+              recMsg.classList.remove('hidden');
+            }
+          }
+        });
+      });
+
+      /* 7. 中式芳療香氣調性切換 Tabs */
+      const scentTabs = document.querySelectorAll('.scent-tab-btn');
+      const panelWood = document.getElementById('scent-panel-wood');
+      const panelFloral = document.getElementById('scent-panel-floral');
+
+      scentTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const target = tab.getAttribute('data-scent-tab');
+          scentTabs.forEach(t => {
+            const isSelected = t.getAttribute('data-scent-tab') === target;
+            t.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+            if (isSelected) {
+              t.classList.add('bg-brand-ink', 'text-brand-white');
+              t.classList.remove('bg-brand-warmWhite', 'text-brand-inkLight');
+            } else {
+              t.classList.remove('bg-brand-ink', 'text-brand-white');
+              t.classList.add('bg-brand-warmWhite', 'text-brand-inkLight');
+            }
+          });
+
+          if (target === 'wood') {
+            panelWood.classList.remove('hidden');
+            panelFloral.classList.add('hidden');
+          } else {
+            panelFloral.classList.remove('hidden');
+            panelWood.classList.add('hidden');
+          }
+        });
+      });
+
+      /* 8. 服務詳情互動彈窗 Modal */
+      const modal = document.getElementById('service-detail-modal');
+      const closeModalBtn = document.getElementById('close-modal-btn');
+      const modalTag = document.getElementById('modal-service-tag');
+      const modalTitle = document.getElementById('modal-service-title');
+      const modalSubtitle = document.getElementById('modal-service-subtitle');
+      const modalBody = document.getElementById('modal-service-body');
+
+      const openServiceModal = (serviceKey) => {
+        const data = BRAND_CONFIG.servicesDetail[serviceKey];
+        if (!data || !modal) return;
+
+        modalTag.textContent = data.tag;
+        modalTitle.textContent = data.title;
+        modalSubtitle.textContent = data.subtitle;
+
+        const paragraphsHtml = data.paragraphs
+          .map(p => `<p>${p}</p>`)
+          .join('');
+
+        const highlightsHtml = `
+          <div class="p-4 rounded-2xl bg-brand-white border border-brand-champagne/30 space-y-2 mt-4">
+            <p class="font-serifTC text-sm font-medium text-brand-ink">體驗重點與適合對象：</p>
+            <ul class="space-y-1.5 text-xs sm:text-sm text-brand-inkLight list-disc list-inside">
+              ${data.highlights.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+          </div>
+        `;
+
+        modalBody.innerHTML = paragraphsHtml + highlightsHtml;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      };
+
+      const closeServiceModal = () => {
+        if (!modal) return;
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      };
+
+      document.querySelectorAll('.open-service-modal').forEach(btn => {
+        btn.addEventListener('click', () => {
+          openServiceModal(btn.getAttribute('data-service-modal'));
+        });
+      });
+
+      if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', closeServiceModal);
+      }
+
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) closeServiceModal();
+        });
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeServiceModal();
+      });
+
+      /* 9. 常見問題 FAQ 手風琴開關 */
+      document.querySelectorAll('.faq-toggle').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+          const content = btn.nextElementSibling;
+          const icon = btn.querySelector('.faq-icon');
+
+          btn.setAttribute('aria-expanded', !isExpanded);
+          if (content) {
+            content.classList.toggle('hidden', isExpanded);
+          }
+          if (icon) {
+            icon.classList.toggle('rotate-45', !isExpanded);
+          }
+        });
+      });
+
+      /* 10. 首頁輕量級香氣擴散微粒 Canvas 動畫（嚴格控制粒子數以確保手機流暢度） */
+      const canvas = document.getElementById('aroma-canvas');
+      if (canvas && !prefersReducedMotion) {
+        const ctx = canvas.getContext('2d');
+        let width = 0;
+        let height = 0;
+        let particles = [];
+
+        const initCanvas = () => {
+          const rect = canvas.parentElement.getBoundingClientRect();
+          width = canvas.width = rect.width;
+          height = canvas.height = rect.height;
+
+          const count = window.innerWidth < 768 ? 14 : 26;
+          particles = Array.from({ length: count }, () => ({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            radius: Math.random() * 2.4 + 1,
+            vx: (Math.random() - 0.5) * 0.22,
+            vy: -Math.random() * 0.28 - 0.06,
+            alpha: Math.random() * 0.35 + 0.12,
+            color: Math.random() > 0.45 ? '155, 174, 155' : '197, 172, 131'
+          }));
+        };
+
+        const renderParticles = () => {
+          ctx.clearRect(0, 0, width, height);
+          for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+            p.x += p.vx;
+            p.y += p.vy;
+
+            if (p.y < -10) p.y = height + 10;
+            if (p.x < -10) p.x = width + 10;
+            if (p.x > width + 10) p.x = -10;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${p.color}, ${p.alpha})`;
+            ctx.fill();
+          }
+          requestAnimationFrame(renderParticles);
+        };
+
+        initCanvas();
+        renderParticles();
+
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(initCanvas, 200);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
